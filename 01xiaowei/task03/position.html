@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三列布局--position</title>
+    <style rel="stylesheet">
+        .wrap{
+            position: relative;
+            margin: 20px;
+            padding: 20px;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            min-height:420px;
+            }
+        .left{
+            width: 200px;
+            position: absolute;
+            left: 20px;
+            top:20px;
+            border: 1px solid #ccc;
+            }
+        .right{
+            width: 120px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            border: 1px solid #ccc;
+            }
+        .main{
+            margin: 0 140px 0 220px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            }
+        .right img{width: 80px;height: 80px;border: 1px solid #ccc;margin:10px 20px;}
+        .right img:first-child{margin-top: 20px;}
+        .right img:last-child{margin-bottom: 20px;}
+        .left img{width: 80px;height: 80px;border: 1px solid #ccc;margin:20px 0 20px 20px;}
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="wrap">
+        <div class="left">
+            <img src="#" alt="team logo">
+            <span>Team-name</span>
+        </div>
+        <div class="main">
+            <div>
+                <h3>百度前端技术学院2017学期介绍 </h3>
+                <p>百度前端技术学院是一个为大学生创办的免费的前端技术实践、分享、交流平台。
+                    由百度校园招聘组、百度校园品牌部、百度前端技术部以及多个百度的前端团队联合创办。</p>
+                <p>学院组织了一批百度在职工程师，精心编写了数十个实践编码任务，将技术知识点系统有机
+                    地串联在各个充满趣味与挑战的任务中，同学们通过实际地编码练习来掌握知识，再辅以互相评价、
+                    学习笔记等方式，加深对于学习内容的理解。</p>
+                <p>今年我们将继续保持实践加交流的学习模式。在之前的基础上，今年引入了分学院的概念，
+                    我们非常荣幸地邀请到了百度商业平台部和糯米运营平台研发部以及ECharts团队这样一些技术能力
+                    较强的前端团队加入，一起为大家提供实践任务与导师评价。每个学院会根据自己日常在工作中的技术偏重，
+                    设置更加接地气的技术挑战，让大家可以更加实实在在地了解企业中前端研发的技术方案和学习路径。
+                    并且，为了提高大家的学习质量，我们今年安排了更多的的导师入驻，导师数量较往年大幅度提升，
+                    相信能够提供给同学们更多的和百度工程师进行技术交流的机会.今年除了前端技术，还特别增设了
+                    iOS及Android移动端开发的学习任务内容，提供给有兴趣在移动端开发的同学。我们还专门开设了数据可视化、
+                    WebGL的班级，让大家能够参与到最新潮、炫酷的技术学习中来，体会通过技术创造美好的幸福体验。
+                    今年为了方便大家进行交流，我们今年特别开设了官方的百度贴吧（百度前端技术学院吧）。当然，
+                    大家也可以继续通过我们的微博（weibo.com/baiduife）及公众号（baidu_ife）与我们取得联系，
+                    关注我们的最新消息。最后，我们也会提供大量的实习岗位给学院学习中表现优秀的同学，
+                    我们热忱地期待和欢迎同学们能够加入到技术学习的大家庭中。
+                </p>
+            </div>
+        </div>
+        <div class="right">
+            <img src="#" alt="team logo">
+            <img src="#" alt="team logo">
+            <img src="#" alt="team logo">
+            <img src="#" alt="team logo">
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
