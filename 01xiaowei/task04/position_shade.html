@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #container {
+
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            width: 400px;
+            height: 200px;
+            margin-top: -100px;
+            margin-left: -200px;
+            background-color: #ccc;
+        }
+        .round {
+            width: 50px;
+            height: 50px;
+            background-color: #fc0;
+        }
+        .half1 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-bottom-right-radius: 50px;
+        }
+        .half2 {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            border-top-left-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box">
+            <div class="round half1"></div>
+            <div class="round half2"></div>
+        </div>
+    </div>
+</body>
+</html>

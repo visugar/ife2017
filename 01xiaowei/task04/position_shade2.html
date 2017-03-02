@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #container {
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            /*width: 400px;
+            height: 200px;
+            margin-top: -100px;
+            margin-left: -200px;*/
+            transform: translate(-50%, -50%);
+            background-color: #ccc;
+        }
+        .text-content {
+            margin: 60px;
+        }
+        .round {
+            width: 50px;
+            height: 50px;
+            background-color: #fc0;
+        }
+        .half1 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-bottom-right-radius: 50px;
+        }
+        .half2 {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            border-top-left-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="box">
+        <div class="text-content">
+            思考不同情况下（如灰色高度是根据内容动态变化的）水平垂直居中的解决方案。
+            动手试一试各种情况的组合，父元素和子元素分别取不同的 position 值。思考 position 属性各种取值的真正含义，尤其是 absolute 究竟是相对谁而言的。
+            注意测试不同情况，尤其是极端情况下的效果。
+            调节浏览器宽度，灰色元素始终水平居中。
+            调节浏览器高度，灰色元素始终垂直居中。
+            调节浏览器高度和宽度，黄色扇形的定位始终准确。
+            其他效果图中给出的标识均被正确地实现，错一项扣一分。
+        </div>
+        <div class="round half1"></div>
+        <div class="round half2"></div>
+    </div>
+</div>
+</body>
+</html>

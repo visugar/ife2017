@@ -4,49 +4,77 @@
     <meta charset="UTF-8">
     <title>三列布局--flex</title>
     <style rel="stylesheet">
-        *{line-height: 1.5;}
-        .wrap{
+        * {
+            line-height: 1.5;
+        }
+
+        .wrap {
             margin: 20px;
             padding: 0 140px 0 220px;
             background-color: #eee;
             overflow: hidden;
             min-height: 470px;
         }
-        .main{
+
+        .main {
             float: left;
             width: 100%;
         }
-        .wrap_body{
+
+        .wrap_body {
             margin: 20px;
             padding: 20px;
             border: 1px solid #ccc;
         }
-        .left{
+
+        .left {
             width: 200px;
             float: left;
             margin-left: -100%;
             position: relative;
             left: -202px;
-            top:20px;
-            _left:0;
+            top: 20px;
+            _left: 0;
             border: 1px solid #ccc;
         }
-        .right{
+
+        .right {
             width: 120px;
             position: relative;
             right: -138px;
-            top:20px;
+            top: 20px;
             float: left;
             margin-left: -140px;
             border: 1px solid #ccc;
         }
 
-        .right img{width: 80px;height: 80px;border: 1px solid #ccc;margin:10px 20px;}
-        .right img:first-child{margin-top: 20px;}px
+        .right img {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #ccc;
+            margin: 10px 20px;
+        }
 
-        .right img:last-child{margin-bottom: 20px;}
-        .left img{width: 80px;height: 80px;border: 1px solid #ccc;margin:20px 0 20px 20px;float:left; }
-        .left span{display: inline-block;float: left;margin: 20px 0 0 10px;}
+        .right img:first-child {
+            margin-top: 20px;
+        }
+        .right img:last-child {
+            margin-bottom: 20px;
+        }
+
+        .left img {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #ccc;
+            margin: 20px 0 20px 20px;
+            float: left;
+        }
+
+        .left span {
+            display: inline-block;
+            float: left;
+            margin: 20px 0 0 10px;
+        }
     </style>
 </head>
 <body>

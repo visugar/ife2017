@@ -4,39 +4,69 @@
     <meta charset="UTF-8">
     <title>三列布局--position</title>
     <style rel="stylesheet">
-        *{line-height: 1.5;}
-        .wrap{
+        * {
+            line-height: 1.5;
+        }
+
+        .wrap {
             position: relative;
             margin: 20px;
             padding: 20px;
             background-color: #eee;
             border: 1px solid #ccc;
-            min-height:420px;
-            }
-        .left{
+            min-height: 420px;
+        }
+
+        .left {
             width: 200px;
             position: absolute;
             left: 20px;
-            top:20px;
+            top: 20px;
             border: 1px solid #ccc;
-            }
-        .right{
+        }
+
+        .right {
             width: 120px;
             position: absolute;
             top: 20px;
             right: 20px;
             border: 1px solid #ccc;
-            }
-        .main{
+        }
+
+        .main {
             margin: 0 140px 0 220px;
             border: 1px solid #ccc;
             padding: 20px;
-            }
-        .right img{width: 80px;height: 80px;border: 1px solid #ccc;margin:10px 20px;}
-        .right img:first-child{margin-top: 20px;}
-        .right img:last-child{margin-bottom: 20px;}
-        .left img{width: 80px;height: 80px;border: 1px solid #ccc;margin:20px 0 20px 20px;float: left;}
-        .left span{display: inline-block;float: left;margin: 20px 0 0 10px;}
+        }
+
+        .right img {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #ccc;
+            margin: 10px 20px;
+        }
+
+        .right img:first-child {
+            margin-top: 20px;
+        }
+
+        .right img:last-child {
+            margin-bottom: 20px;
+        }
+
+        .left img {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #ccc;
+            margin: 20px 0 20px 20px;
+            float: left;
+        }
+
+        .left span {
+            display: inline-block;
+            float: left;
+            margin: 20px 0 0 10px;
+        }
     </style>
 </head>
 <body>
