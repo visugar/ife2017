@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <title>三列布局--flex</title>
     <style rel="stylesheet">
+        *{line-height: 1.5;}
         .wrap{
             margin: 20px;
             padding: 20px;
             display: flex;
             border: 1px solid #ccc;
+            background-color: #eee;
         }
         .left{
             width: 200px;
@@ -29,8 +31,8 @@
         .right img{width: 80px;height: 80px;border: 1px solid #ccc;margin:10px 20px;}
         .right img:first-child{margin-top: 20px;}
         .right img:last-child{margin-bottom: 20px;}
-        .left img{width: 80px;height: 80px;border: 1px solid #ccc;margin:20px 0 20px 20px;}
-        .left span{display: inline-block;float: right;margin: 20px 20px 0 0;}
+        .left img{width: 80px;height: 80px;border: 1px solid #ccc;margin:20px 0 20px 20px;float: left;}
+        .left span{display: inline-block;float: left;margin: 20px 0 0 10px;}
     </style>
 </head>
 <body>
@@ -38,7 +40,7 @@
     <div class="wrap">
         <div class="left">
             <img src="img/logo.jpg" alt="team logo">
-            <span>Team-name</span>
+            <span>团队名称</span>
         </div>
         <div class="main">
             <div>

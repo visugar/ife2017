@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>三列布局--双翼布局</title>
     <style rel="stylesheet">
-        *{margin: 0;padding: 0}
+        *{margin: 0;padding: 0;line-height: 1.5;}
         .clearfix:after{content: '.';overflow: hidden;clear: both;display: block;height: 0;visibility: hidden;}
-        .wrap{width: 80%;margin: 20px auto;padding: 20px;background-color: #eee;border: 1px solid #ccc;}
+        .wrap{margin: 20px;padding: 20px;background-color: #eee;border: 1px solid #ccc;}
         .wrap_body{margin: 0 140px 0 220px;border: 1px solid #ccc;padding: 20px;}
         .main{float:left;width: 100%;}
         .left{float: left;width: 200px;margin-left: -100%;box-sizing: border-box;border: 1px solid #ccc;}
@@ -14,8 +14,8 @@
         .right img{width: 80px;height: 80px;border: 1px solid #ccc;margin: 10px 20px;}
         .right img:first-child{margin-top: 20px;}
         .right img:last-child{margin-bottom: 20px;}
-        .left img{width: 80px;height: 80px;border: 1px solid #ccc;margin:20px 0  20px 20px;}
-        .left span{display: inline-block;float: right;margin: 20px 20px 0 0;}
+        .left img{width: 80px;height: 80px;border: 1px solid #ccc;margin:20px 0  20px 20px;float: left;}
+        .left span{display: inline-block;float: left;margin: 20px 0 0 10px;}
     </style>
 </head>
 <body>
@@ -46,7 +46,7 @@
         </div>
         <div class="left">
             <img src="img/logo.jpg" alt="team logo">
-            <span>Team-name</span>
+            <span>团队名称</span>
         </div>
         <div class="right">
             <img src="img/logo.jpg" alt="team logo">
