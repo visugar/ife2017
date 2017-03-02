@@ -1,0 +1,164 @@
+/*初始化*/
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/*所有a标签*/
+a {
+    text-decoration: none;
+}
+
+/*头部模块*/
+header {
+    width: 100%;
+    height: 70px;
+    background-color: #2F2F2F;
+}
+.head_logo {
+    float: left;
+    padding: 10px 0 0 10%;
+}
+
+.head_logo a {
+
+    font-size: 30px;
+    color: rgba(255, 0, 0, 0.88);
+}
+
+/*头部导航条*/
+.nav {
+    float: right;
+    margin: 25px 10% 0 0;
+}
+
+.nav ul li {
+    display: inline-block;
+}
+
+.nav a {
+    text-underline: none;
+    color: white;
+}
+
+/*主要部分*/
+.main-wrap {
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.main {
+    margin-right: 460px;
+
+}
+
+.news {
+    margin: 15px;
+    padding: 20px 20px;
+    border: outset;
+}
+
+.new1 img, .new2 img {
+    width: 60%;
+}
+
+.new2 li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.img img {
+    width: 180px;
+    height: 150px;
+    margin: 0 10px 10px;
+}
+
+.img h3 {
+    text-align: center;
+    line-height: 40px;
+}
+
+/*图片部分*/
+.img {
+    width: 200px;
+    height: 200px;
+    margin: 20px 0 0 30px;
+    display: inline-block;
+    border: 1px solid #ccc;
+}
+
+/*表格部分*/
+.new4 .rank {
+    margin-left: 50px;
+    font-weight: bolder;
+}
+
+.new4 .table {
+    border-collapse: collapse;
+}
+
+.new4 .table thead {
+    background-color: #2F2F2F;
+    color: white;
+}
+
+.new4 .table tfoot {
+    background-color: #ccc;
+}
+
+.new4 .table {
+    width: 98%;
+    margin: 0 auto;
+}
+
+/*侧边栏部分*/
+.aside {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 400px;
+    margin: 0 15px;
+    padding: 20px 20px;
+    border: outset;
+}
+
+label {
+    display: inline-block;
+    width: 30%;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.tips {
+    margin: 0 0 20px 30%;
+}
+
+.descrb label {
+    vertical-align: top;
+}
+
+button {
+    width: 96%;
+    height: 40px;
+    font-size: 18px;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background-color: rgba(46, 41, 255, 0.88);
+}
+
+/*底部*/
+footer {
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    color: white;
+    background-color: #2F2F2F;
+    text-align: center;
+}
+

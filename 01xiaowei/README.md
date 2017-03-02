@@ -16,11 +16,17 @@
 
 > 三列布局的多种实现方式，包括float（BFC）、position、双翼、flex等,其中flex为等高布局模式，与视觉稿效果不一致。
 
-### 4.task04
+### 4. task04
 + [宽度高度固定](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/01xiaowei/task04/position_shade.html)
 +  [宽度高度随内容变化](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/01xiaowei/task04/position_shade2.html)
 
 > 暂时只写了这两种情况的垂直居中布局
+
+### 5. task05
+- [左边自适应右边固定布局](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/01xiaowei/task05/two_layout.html)
+
+> 粗略的实现了左侧自适应右侧固定的两列布局方式，实现的比较粗糙，需要继续努力
+
 
 
 
