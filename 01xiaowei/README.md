@@ -27,6 +27,11 @@
 
 > 粗略的实现了左侧自适应右侧固定的两列布局方式，实现的比较粗糙，需要继续努力
 
+### 6. task06
+- [模拟报纸排版](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/01xiaowei/task06/index.html)
+
+> 根据视觉稿实现了基本的效果图，但是有的地方卡住了，还没解决，继续学习下再思考某些效果的实现
+
 
 
 
