@@ -291,7 +291,7 @@ aside .css-wd p:first-child {
     margin: 0 5px;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
-    border-bottom: 4px solid #000;
+    border-bottom: 8px solid #000;
 }
 
 .rt-ord .ord-wrap .aut {
