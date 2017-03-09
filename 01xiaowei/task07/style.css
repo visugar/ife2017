@@ -2,15 +2,17 @@
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     overflow: auto;
 }
-#container{
+
+#container {
     width: 1280px;
     margin: 0 auto;
 }
 
-.clearfix:after{
+.clearfix:after {
     content: ".";
     height: 0;
     clear: both;
@@ -19,12 +21,12 @@ body{
     visibility: hidden;
 }
 
-.clearfix{
-    zoom:1;
+.clearfix {
+    zoom: 1;
 }
 
 /*头部*/
-#head-wrap{
+#head-wrap {
     width: 100%;
     min-width: 1280px;
     height: 56px;
@@ -32,46 +34,47 @@ body{
     position: fixed;
     z-index: 999;
 }
-header{
+
+header {
     width: 1280px;
     margin: 0 auto;
 
 }
 
-.head_logo{
+.head_logo {
     float: left;
     height: 32px;
     margin: 12px 0 12px 50px;
 }
 
-.head_logo img{
+.head_logo img {
     display: inline-block;
     height: 32px;
 }
 
-.head_logo .tit{
+.head_logo .tit {
     display: inline-block;
     font: 21px "黑体";
     vertical-align: top;
     line-height: 32px;
 }
 
-nav{
+nav {
     float: right;
     margin-right: 44px;
 }
 
-nav li{
+nav li {
     display: inline-block;
     list-style: none;
 }
 
-nav li a:hover{
+nav li a:hover {
     color: #e7504d;
     border-bottom: 4px solid #e7504d;
 }
 
-nav li a{
+nav li a {
     display: inline-block;
     height: 52px;
     padding: 0 23px;
@@ -81,44 +84,47 @@ nav li a{
     text-decoration: none;
 }
 
-article{
+article {
     padding-top: 56px;
 }
 
-.ad .banner{
+.ad .banner {
     position: relative;
 }
 
-.ad .banner img{
+.ad .banner img {
     width: 100%;
     height: 690px;
-    border-top:1px solid #dfe0e2;
+    border-top: 1px solid #dfe0e2;
     border-bottom: 1px solid #dfe0e2;
 }
-.ad .banner-shade{
+
+.ad .banner-shade {
     position: absolute;
     height: 690px;
     left: 0;
     right: 0;
-    top:0;
-    background-color:rgba(0,0,0,0.3);
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
 }
-.ad .ad-txt{
+
+.ad .ad-txt {
     position: absolute;
     top: 213px;
     left: 125px;
 }
 
-.ad .ad-txt  p:first-child{
+.ad .ad-txt p:first-child {
     font: 60px/90px "微软雅黑";
     color: #fff;
 }
 
-.ad .ad-txt .cnt{
+.ad .ad-txt .cnt {
     font: 21px/32px "微软雅黑";
     color: #fff;
 }
-.ad .ad-txt .ad-btn{
+
+.ad .ad-txt .ad-btn {
     display: block;
     text-align: center;
     padding-top: 15px;
@@ -132,20 +138,20 @@ article{
     text-decoration: none;
 }
 
-.f-group .group{
+.f-group .group {
     display: inline-block;
     width: 315px;
     height: 260px;
 }
 
-.group .group-img img{
+.group .group-img img {
     width: 50px;
     height: 50px;
     background-color: #72b16a;
-    margin:46px 132px ;
+    margin: 46px 132px;
 }
 
-.group .group-txt{
+.group .group-txt {
     width: 100%;
     height: 65px;
     font: 14px/24px "黑体";
@@ -154,38 +160,39 @@ article{
     margin-bottom: 85px;
 }
 
-.group .group-txt-4{
+.group .group-txt-4 {
     border: none;
 }
 
-.about{
+.about {
     width: 100%;
     height: 360px;
     text-align: center;
     background-color: #F7F7F7;
 }
-.about img{
+
+.about img {
     width: 110px;
     height: 110px;
     margin: 70px 0 30px 0;
 }
 
-.about p{
+.about p {
     font: 54px "黑体";
     color: #787b83;
 }
 
-.info-sech{
+.info-sech {
     width: 100%;
     height: 340px;
     text-align: center;
     background-image: url(img/map.jpg);
     /*background-color: rgba(190,78,72,0.2);*/
-    border-top:1px solid #dfe0e2;
+    border-top: 1px solid #dfe0e2;
     border-bottom: 1px solid #dfe0e2;
 }
 
-.info-sech-txt .txt1{
+.info-sech-txt .txt1 {
     margin-top: 40px;
     font: 21px/42px "黑体";
     color: #ffffff;
@@ -197,24 +204,25 @@ article{
     color: #fff;
 }
 
-.short-line{
+.short-line {
     width: 30px;
     height: 3px;
     margin: 0 auto;
     background-color: #fff;
 }
 
-.info-sech-wrap li{
+.info-sech-wrap li {
     display: inline-block;
     /*width: 235px;
     height: 35px;*/
 }
 
-.info-sech-wrap select{
+.info-sech-wrap select {
     width: 235px;
     height: 35px;
 }
-.info-sech-wrap a{
+
+.info-sech-wrap a {
     width: 235px;
     height: 28px;
     padding-top: 6px;
@@ -222,46 +230,50 @@ article{
     color: #fff;
 }
 
-.sech-btn a{
+.sech-btn a {
     display: inline-block;
     background-color: #e74f4d;
 }
 
-.ac-wrap{
+.ac-wrap {
     width: 985px;
     height: 400px;
     padding: 100px 145px 100px 150px;
     background-color: #F7F7F7;
 }
 
-.ac-item{
+.ac-item {
     display: inline-block;
     text-align: center;
     margin-right: 38px;
 }
-.ac-item-4{
+
+.ac-item-4 {
     margin-right: 0;
 }
-.ac-img img{
+
+.ac-img img {
     width: 196px;
     height: 310px;
     padding: 12px 8px;
     background-color: #fff;
-    border:1px solid #dfe0e2;
+    border: 1px solid #dfe0e2;
 }
-.ac-wrap .ac-tit p,.ac .ac-tit h3{
+
+.ac-wrap .ac-tit p, .ac .ac-tit h3 {
     font: 12px/32px "微软雅黑";
 }
-.ac-tit-1 h3,.ac-tit-3 h3,.ac-tit-4 h3{
+
+.ac-tit-1 h3, .ac-tit-3 h3, .ac-tit-4 h3 {
     margin-top: 10px;
 }
-.ac-item-2{
+
+.ac-item-2 {
     position: relative;
     top: -10px;
 }
 
-
-.log-time .log-time-lt{
+.log-time .log-time-lt {
     float: left;
     width: 850px;
     height: 565px;
@@ -269,38 +281,42 @@ article{
     background-image: url("img/10.jpg");
     /*background-color: #938e8c;*/
 }
-.log-time .log-time-lt p{
-    font: 22px/44px"微软雅黑";
+
+.log-time .log-time-lt p {
+    font: 22px/44px "微软雅黑";
     color: #fff;
 }
-.log-time .log-time-lt .log-lt-wld{
+
+.log-time .log-time-lt .log-lt-wld {
     margin-top: 120px;
     font: 50px "微软雅黑";
 }
 
-.log-time .log-time-lt .log-lt-time{
+.log-time .log-time-lt .log-lt-time {
     font: 158px/135px "微软雅黑";
     margin-bottom: 30px;
 }
 
-.log-time .log-time-rt{
+.log-time .log-time-rt {
     float: left;
     width: 430px;
     height: 565px;
     box-sizing: border-box;
     padding: 145px 70px 0 70px;
 }
-.log-time-rt h3{
+
+.log-time-rt h3 {
     line-height: 50px;
     text-align: center;
 }
-.log-time-rt p{
+
+.log-time-rt p {
     font: 12px/40px "宋体";
 }
 
-.log-time-rt a{
+.log-time-rt a {
     display: block;
-    width:103px;
+    width: 103px;
     height: 31px;
     margin: 40px auto 0;
     font: 12px/32px "微软雅黑";
@@ -309,47 +325,50 @@ article{
     color: #e25c60;
     text-decoration: none;
 }
-.log-rt-rud{
+
+.log-rt-rud {
     text-align: center;
 }
-.log-rt-rud span{
+
+.log-rt-rud span {
     display: inline-block;
     width: 8px;
     height: 8px;
     margin: 25px 5px;
-   /* margin-right: 20px;*/
+    /* margin-right: 20px;*/
     border-radius: 4px;
     border: 1px solid #aaa;
 }
 
-.log-rt-rud .sec{
+.log-rt-rud .sec {
     background-color: #aaa;
 }
 
-.log-more{
+.log-more {
     display: flex;
 }
 
-.log-more-item{
+.log-more-item {
     flex: 1;
     height: 520px;
     text-align: center;
 }
 
-.log-more-item1{
+.log-more-item1 {
     background-color: #e25c60;
     color: #fff;
 }
-.log-more-item2{
+
+.log-more-item2 {
     background-color: #fff;
 }
 
-.log-more-item p{
+.log-more-item p {
     font: 21px/35px "黑体";
     margin: 170px 0 15px 0;
 }
 
-.log-more-item a{
+.log-more-item a {
     display: block;
     text-align: center;
     width: 167px;
@@ -360,87 +379,99 @@ article{
     color: #fff;
     text-decoration: none;
 }
-.log-more-item2 a{
+
+.log-more-item2 a {
     color: #e25c60;
     border: 2px solid #e25c60;
 }
-.log-more-item2 .short-line{
+
+.log-more-item2 .short-line {
     background-color: #787b83;
 }
-.log-more-item3{
+
+.log-more-item3 {
     background-image: url("img/11.jpg");
     /*background-color: #75b864;*/
 }
 
-.tria{
+.tria {
     display: block;
     border-top: 14px solid transparent;
     border-bottom: 14px solid transparent;
 
 }
-.log-time-lt .tria{
+
+.log-time-lt .tria {
     border-right: 28px solid #fff;
     margin-top: -170px;
 }
 
-.log-more-item3 .tria{
+.log-more-item3 .tria {
     border-left: 28px solid #fff;
     margin-top: 250px;
 }
 
-.join-info-be{
+.join-info-be {
     text-align: center;
-    padding:110px 0;
+    padding: 110px 0;
 }
-.join-info-be h3{
+
+.join-info-be h3 {
     font: 21px/35px "黑体";
 }
-.join-info-be p{
+
+.join-info-be p {
     font: 12px/20px "微软雅黑";
     color: #aaa;
     margin-top: 10px;
 }
 
-.join-info-be .short-line{
+.join-info-be .short-line {
     background-color: #e25c60;
 }
 
-.join-info-wrap{
-    padding: 0 135px 160px ;
+.join-info-wrap {
+    padding: 0 135px 160px;
     width: 1000px;
     height: 280px;
 }
-.join-info-lt{
+
+.join-info-lt {
     float: left;
     width: 290px;
     height: 100%;
     margin-right: 80px;
 }
-.join-info-lt h3{
+
+.join-info-lt h3 {
     font: 14px "黑体";
     margin-bottom: 30px;
 }
-.join-info-lt p{
+
+.join-info-lt p {
     font: 12px/21px "宋体";
     color: #787b83;
     margin-bottom: 20px;
 }
-.join-lt-mr{
+
+.join-lt-mr {
     position: relative;
-    top:-30px;
-    left:233px;
+    top: -30px;
+    left: 233px;
 }
-.join-lt-mr a{
+
+.join-lt-mr a {
     font: 12px "微软雅黑";
     color: #787b83;
     text-decoration: none;
 }
+
 .join-info-rt {
     float: left;
     width: 630px;
 }
 
-.join-rt-bas input{
+.join-rt-bas input {
     display: inline-block;
     width: 287px;
     height: 40px;
@@ -449,7 +480,8 @@ article{
     border: none;
     padding-left: 10px;
 }
-.join-rt-des textarea{
+
+.join-rt-des textarea {
     width: 605px;
     height: 100px;
     margin: 0 15px 20px 0;
@@ -458,14 +490,14 @@ article{
     padding: 10px 0 0 10px;
 }
 
-.join-rt-btn{
+.join-rt-btn {
     width: 620px;
     height: 40px;
     border: none;
     background-color: #EDEDEF;
 }
 
-.foot-cot{
+.foot-cot {
     width: 100%;
     min-width: 1280px;
     text-align: center;
@@ -474,30 +506,36 @@ article{
     padding-top: 80px;
     background-color: #33363f;
 }
-.foot-cot p{
+
+.foot-cot p {
     font: 12px/18px "宋体";
 }
-.foot-cot p:first-child{
+
+.foot-cot p:first-child {
     font: 21px/48px "黑体";
 }
-.foot-cot form{
+
+.foot-cot form {
     margin: 25px 0;
 }
-.foot-cot form input{
+
+.foot-cot form input {
     width: 420px;
     height: 40px;
     border: none;
     padding-left: 10px;
     background-color: #fff;
 }
-.foot-cot form button{
+
+.foot-cot form button {
     width: 80px;
     height: 40px;
     border: none;
     margin-top: 3px;
     background-color: #707278;
 }
-.foot-icon a,.foot-icon img{
+
+.foot-icon a, .foot-icon img {
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -506,26 +544,27 @@ article{
     /*text-decoration: none;*/
 }
 
-
-.ft-copy{
+.ft-copy {
     width: 100%;
     min-width: 1280px;
     height: 57px;
     background-color: #2f3039;
 }
-.ft-copy-wrap{
+
+.ft-copy-wrap {
     width: 1280px;
     min-width: 1280px;
     margin: 0 auto;
 }
 
-.ft-copy .ft-logo{
+.ft-copy .ft-logo {
     float: left;
     line-height: 57px;
     margin-left: 100px;
     color: #fff;
 }
-.ft-copy .ft-back a{
+
+.ft-copy .ft-back a {
     float: right;
     width: 100px;
     height: 57px;
