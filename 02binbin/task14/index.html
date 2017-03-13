@@ -101,7 +101,9 @@
             num.onclick = function (e) {
                 var e = e || window.event;
                 var target = e.target || e.srcElement;
-                num.removeChild(target);
+                if(target && target.nodeName == 'LI'){
+                    num.removeChild(target);
+                }
             }
         }
     }
