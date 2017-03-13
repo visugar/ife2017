@@ -15,4 +15,5 @@
 1. 斌斌学院：
     - [task11](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task11/index.html)
     - [task12](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task12/index.html)
-    - [task12](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task13/index.html)
+    - [task13](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task13/index.html)
+    - [task14](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task14/index.html)

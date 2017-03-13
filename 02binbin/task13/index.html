@@ -13,7 +13,7 @@
     <li>广州空气质量：<b>50</b></li>
     <li>深圳空气质量：<b>40</b></li>
     <li>福州空气质量：<b>32</b></li>
-    <li>成都空气质量：<b>90</b></li>
+    <li>张家界空气质量：<b>90</b></li>
 </ul>
 
 <ul id="resort">
@@ -54,7 +54,7 @@
         var child = source.children;
         for (var i = 0; i < len; i++) {
             var arr = [];
-            arr.push(child[i].innerText.substring(0, 2));
+            arr.push(child[i].innerText.slice(0, -7));
             arr.push(child[i].getElementsByTagName('b')[0].innerText);
             data.push(arr);
             arr = [];
@@ -81,6 +81,7 @@
      */
     function render(data) {
         var len = data.length;
+        resort.innerHTML = '';
         for (var i = 0; i < len; i++) {
             var li = document.createElement('li');
             li.innerHTML = '第' + (i + 1) + '名：' + data[i][0] + '空气质量：' + '<b>' + data[i][1] + '</b>';
@@ -99,7 +100,8 @@
 
     function init() {
         // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
-        sortBtn.addEventListener('click', btnHandle);
+        sortBtn.onclick = btnHandle;
+        //sortBtn.addEventListener('click', btnHandle);
     }
 
     init();

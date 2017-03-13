@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟★队列</title>
+    <style>
+        .num li {
+            display: inline-block;
+            list-style: none;
+            background-color: #72b16a;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .dis {
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="btn">
+    <input type="text" value=""><span class="dis">输入数字有误,请重输</span>
+    <button class="lt-in" type="button">→左侧入</button>
+    <button class="rt-in" type="button">←右侧入</button>
+    <button class="lt-out" type="button">←左侧出</button>
+    <button class="rt-out" type="button">右侧出→</button>
+</div>
+<div class="num-wrap">
+    <ul class="num">
+        <li>33</li>
+        <li>10</li>
+        <li>55</li>
+        <li>101</li>
+        <li>46</li>
+    </ul>
+</div>
+<script>
+    var ipt = document.getElementsByTagName('input')[0];
+    var ltIn = document.getElementsByClassName('lt-in')[0];
+    var rtIn = document.getElementsByClassName('rt-in')[0];
+    var ltOut = document.getElementsByClassName('lt-out')[0];
+    var rtOut = document.getElementsByClassName('rt-out')[0];
+    var dis = document.getElementsByClassName('dis')[0];
+
+    var num = document.getElementsByClassName('num')[0];
+    var lis = num.getElementsByTagName('li');
+
+
+    /*左侧插入*/
+    function ltInFunc() {
+        var number = ipt.value;
+        if (isNaN(number)) {
+            dis.style.display = 'inline';
+            ipt.value = "";
+        } else {
+            var ctLi = document.createElement('li');
+            ctLi.innerText = number;
+            num.insertBefore(ctLi, lis[0]);
+            ipt.value = "";
+        }
+        ipt.onfocus = function () {
+            dis.style.display = 'none';
+        }
+
+
+    }
+
+    /*右侧插入*/
+    function rtInFunc() {
+        var number = ipt.value;
+        if (isNaN(number)) {
+            dis.style.display = 'inline';
+            ipt.value = "";
+        } else {
+            var ctLi = document.createElement('li');
+            ctLi.innerText = number;
+            num.appendChild(ctLi);
+            ipt.value = "";
+        }
+        ipt.onfocus = function () {
+            dis.style.display = 'none';
+        }
+    }
+
+    /*左侧出*/
+    function ltOutFunc() {
+        num.removeChild(lis[0]);
+    }
+
+    /*右侧出*/
+    function rtOutFunc() {
+        var len = lis.length;
+        num.removeChild(lis[len - 1]);
+    }
+
+    /*删除所点击的数字*/
+    function del() {
+        var len = lis.length;
+        for (var i = 0; i < len; i++) {
+            num.onclick = function (e) {
+                var e = e || window.event;
+                var target = e.target || e.srcElement;
+                num.removeChild(target);
+            }
+        }
+    }
+
+    ltIn.onclick = ltInFunc;
+    rtIn.onclick = rtInFunc;
+    ltOut.onclick = ltOutFunc;
+    rtOut.onclick = rtOutFunc;
+    del();
+</script>
+</body>
+</html>
