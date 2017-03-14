@@ -28,11 +28,11 @@
 </div>
 <div class="num-wrap">
     <ul class="num">
-        <li>33</li>
+        <!--<li>33</li>
         <li>10</li>
         <li>55</li>
         <li>101</li>
-        <li>46</li>
+        <li>46</li>-->
     </ul>
 </div>
 <script>
@@ -85,34 +85,35 @@
 
     /*左侧出*/
     function ltOutFunc() {
+        var delt=lis[0].innerText;
         num.removeChild(lis[0]);
+        alert('您删除的数字是'+delt);
     }
 
     /*右侧出*/
     function rtOutFunc() {
+
         var len = lis.length;
+        var dert= lis[len-1].innerText;
         num.removeChild(lis[len - 1]);
+        alert('您删除的数字是'+dert);
     }
 
     /*删除所点击的数字*/
-    function del() {
-        var len = lis.length;
-        for (var i = 0; i < len; i++) {
-            num.onclick = function (e) {
-                var e = e || window.event;
-                var target = e.target || e.srcElement;
-                if(target && target.nodeName == 'LI'){
-                    num.removeChild(target);
-                }
-            }
+    num.onclick = function (e) {
+        var e = e || window.event;
+        var target = e.target || e.srcElement;
+        if(target && target.nodeName == 'LI'){
+            num.removeChild(target);
         }
     }
+
 
     ltIn.onclick = ltInFunc;
     rtIn.onclick = rtInFunc;
     ltOut.onclick = ltOutFunc;
     rtOut.onclick = rtOutFunc;
-    del();
+
 </script>
 </body>
 </html>

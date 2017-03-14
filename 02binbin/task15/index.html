@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟★队列</title>
+    <style>
+        .num li,#num-sort-wrap li{
+            display: inline-block;
+            list-style: none;
+            background-color: #72b16a;
+            padding: 0 5px;
+            margin: 5px;
+        }
+
+        .dis1 {
+            display: none;
+            color: red;
+        }
+
+        .dis2 {
+            display: none;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div class="btn">
+    <h3>请输入10到100之间的数字：</h3>
+    <input type="text" value="">
+    <span class="dis1">输入的不是数字,请重输</span>
+    <span class="dis2">您输入的不是10-100之间的数字,请重输</span>
+
+    <button class="lt-in" type="button">→左侧入</button>
+    <button class="rt-in" type="button">←右侧入</button>
+    <button class="lt-out" type="button">←左侧出</button>
+    <button class="rt-out" type="button">右侧出→</button>
+
+    <button class="num-sort" type="button">排序</button>
+</div>
+<div class="num-wrap">
+    <ul class="num">
+
+    </ul>
+</div>
+<div>
+    <ul id="num-sort-wrap">
+
+    </ul>
+</div>
+<script>
+    var ipt = document.getElementsByTagName('input')[0];
+    var ltIn = document.getElementsByClassName('lt-in')[0];
+    var rtIn = document.getElementsByClassName('rt-in')[0];
+    var ltOut = document.getElementsByClassName('lt-out')[0];
+    var rtOut = document.getElementsByClassName('rt-out')[0];
+    var dis1 = document.getElementsByClassName('dis1')[0];
+    var dis2 = document.getElementsByClassName('dis2')[0];
+    var numSort = document.getElementsByClassName('num-sort')[0];
+
+    var numSortWrap=document.getElementById('num-sort-wrap');
+    var num = document.getElementsByClassName('num')[0];
+    var lis = num.getElementsByTagName('li');
+
+
+    /*左侧插入*/
+    function ltInFunc() {
+        var number = ipt.value;
+        var liLen = lis.length;
+        if (isNaN(number)) {
+            dis1.style.display = 'inline';
+            ipt.value = "";
+        } else if (number < 10 || number > 100) {
+            dis2.style.display = 'inline';
+            ipt.value = "";
+        } else if (liLen >= 60) {
+            alert('您输入的数字个数已超过60，不能再输入');
+        } else {
+            var ctLi = document.createElement('li');
+            ctLi.innerText = number;
+            ctLi.style.height=number + 'px';
+            num.insertBefore(ctLi, lis[0]);
+            ipt.value = "";
+        }
+        ipt.onfocus = function () {
+            dis1.style.display = 'none';
+            dis2.style.display = 'none';
+        }
+
+    }
+
+    /*右侧插入*/
+    function rtInFunc() {
+        var number = ipt.value;
+        var liLen = lis.length;
+        if (isNaN(number)) {
+            dis1.style.display = 'inline';
+            ipt.value = "";
+        } else if (number < 10 || number > 100) {
+            dis2.style.display = 'inline';
+            ipt.value = "";
+        } else if (liLen >= 60) {
+            alert('您输入的数字个数已超过60，不能再输入');
+        } else {
+            var ctLi = document.createElement('li');
+            ctLi.innerText = number;
+            ctLi.style.height=number + 'px';
+            num.appendChild(ctLi);
+            ipt.value = "";
+        }
+        ipt.onfocus = function () {
+            dis1.style.display = 'none';
+            dis2.style.display = 'none';
+        }
+    }
+
+    /*左侧出*/
+    function ltOutFunc() {
+        var delt = lis[0].innerText;
+        num.removeChild(lis[0]);
+        alert('您删除的数字是' + delt);
+    }
+
+    /*右侧出*/
+    function rtOutFunc() {
+
+        var len = lis.length;
+        var dert = lis[len - 1].innerText;
+        num.removeChild(lis[len - 1]);
+        alert('您删除的数字是' + dert);
+    }
+
+    /*删除所点击的数字*/
+
+    num.onclick = function (e) {
+        var e = e || window.event;
+        var target = e.target || e.srcElement;
+        if (target && target.nodeName == 'LI') {
+            num.removeChild(target);
+        }
+    }
+
+
+    /*排序函数*/
+    function sortN() {
+        numSortWrap.innerHTML='';
+        var liLen=lis.length;
+        var arr=[];
+        function byNum(a,b) {
+            return a-b;
+        }
+        for(var i=0 ;i<liLen;i++){
+            arr.push(Number(lis[i].innerText));
+        }
+        arr.sort(byNum);
+        for (var j=0;j<liLen;j++){
+            setInterval(function () {},3000);
+                var newLi = document.createElement('li');
+                newLi.innerText = arr[j];
+                newLi.style.height=arr[j]+'px';
+                numSortWrap.appendChild(newLi);
+            }
+
+
+
+    }
+
+    ltIn.onclick = ltInFunc;
+    rtIn.onclick = rtInFunc;
+    ltOut.onclick = ltOutFunc;
+    rtOut.onclick = rtOutFunc;
+    numSort.onclick=sortN;
+
+</script>
+</body>
+</html>
