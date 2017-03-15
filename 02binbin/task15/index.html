@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>模拟★队列</title>
     <style>
-        .num li,#num-sort-wrap li{
+        .num li, #num-sort-wrap li {
             display: inline-block;
             list-style: none;
             background-color: #72b16a;
@@ -58,7 +58,7 @@
     var dis2 = document.getElementsByClassName('dis2')[0];
     var numSort = document.getElementsByClassName('num-sort')[0];
 
-    var numSortWrap=document.getElementById('num-sort-wrap');
+    var numSortWrap = document.getElementById('num-sort-wrap');
     var num = document.getElementsByClassName('num')[0];
     var lis = num.getElementsByTagName('li');
 
@@ -78,7 +78,7 @@
         } else {
             var ctLi = document.createElement('li');
             ctLi.innerText = number;
-            ctLi.style.height=number + 'px';
+            ctLi.style.height = number + 'px';
             num.insertBefore(ctLi, lis[0]);
             ipt.value = "";
         }
@@ -104,7 +104,7 @@
         } else {
             var ctLi = document.createElement('li');
             ctLi.innerText = number;
-            ctLi.style.height=number + 'px';
+            ctLi.style.height = number + 'px';
             num.appendChild(ctLi);
             ipt.value = "";
         }
@@ -143,24 +143,26 @@
 
     /*排序函数*/
     function sortN() {
-        numSortWrap.innerHTML='';
-        var liLen=lis.length;
-        var arr=[];
-        function byNum(a,b) {
-            return a-b;
+        numSortWrap.innerHTML = '';
+        var liLen = lis.length;
+        var arr = [];
+
+        function byNum(a, b) {
+            return a - b;
         }
-        for(var i=0 ;i<liLen;i++){
+
+        for (var i = 0; i < liLen; i++) {
             arr.push(Number(lis[i].innerText));
         }
         arr.sort(byNum);
-        for (var j=0;j<liLen;j++){
-            setInterval(function () {},3000);
-                var newLi = document.createElement('li');
-                newLi.innerText = arr[j];
-                newLi.style.height=arr[j]+'px';
-                numSortWrap.appendChild(newLi);
-            }
-
+        for (var j = 0; j < liLen; j++) {
+            setInterval(function () {
+            }, 3000);
+            var newLi = document.createElement('li');
+            newLi.innerText = arr[j];
+            newLi.style.height = arr[j] + 'px';
+            numSortWrap.appendChild(newLi);
+        }
 
 
     }
@@ -169,7 +171,7 @@
     rtIn.onclick = rtInFunc;
     ltOut.onclick = ltOutFunc;
     rtOut.onclick = rtOutFunc;
-    numSort.onclick=sortN;
+    numSort.onclick = sortN;
 
 </script>
 </body>

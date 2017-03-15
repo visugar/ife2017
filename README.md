@@ -9,6 +9,7 @@
     - [task05](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/01xiaowei/task05/two_layout.html)
     - [task06](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/01xiaowei/task06/index.html)
     - [task07](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/01xiaowei/task07/index.html)
+    - [task08](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/01xiaowei/task08/index.html)
     
 
 ---

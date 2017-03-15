@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex流式布局</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <style>
+        .container-fluid{
+            border: 1px solid #999;
+            /*padding: 20px;*/
+        }
+        .row{
+            padding: 20px;
+        }
+        .row div{
+            height: 50px;
+            background-color: #eee;
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 col-xs-6">1</div>
+        <div class="col-sm-4 col-xs-6">2</div>
+        <div class="col-sm-4 col-xs-12">3</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 col-xs-3">4</div>
+        <div class="col-sm-6 col-xs-6">5</div>
+        <div class="col-sm-3 col-xs-3">6</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1 col-xs-2">7</div>
+        <div class="col-sm-1 col-xs-2">8</div>
+        <div class="col-sm-2 col-xs-8">9</div>
+        <div class="col-sm-2 col-xs-3">10</div>
+        <div class="col-sm-6 col-xs-3">11</div>
+    </div>
+</div>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>

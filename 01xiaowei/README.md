@@ -37,5 +37,10 @@
 
 > 根据视觉稿实现了基本的效果图，不过有几个小地方写的比较粗糙，整体代码写的也有点乱，有待加强
 
+### 8. task08
+- [栅格布局系统实现](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/01xiaowei/task08/index.html)
+
+> 基本实现了，不过还要完善一下
+
 
 

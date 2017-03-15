@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>IFE2017-task4</title>
+    <style type="text/css">
+        ul {
+            list-style: none;
+        }
+
+        li {
+            float: left;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            background-color: red;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+<input id="input" type="number" name="num">
+<button id="left-in">左侧入</button>
+<button id="right-in">右侧入</button>
+<button id="left-out">左侧出</button>
+<button id="right-out">右侧出</button>
+
+<ul id="list"></ul>
+
+<script type="text/javascript">
+    var list = document.getElementById("list");
+    //生成li节点
+    function createLi() {
+        var num = document.getElementById("input").value;
+        if (isNaN(parseInt(num)) == true)return;          			//判断是否为数值
+        var li = document.createElement("li");
+        var text = document.createTextNode(num);
+        li.appendChild(text);
+        li.onclick = function () {
+            list.removeChild(li);
+            alert("删除" + num);
+        };
+        return li;
+    }
+    function leftIn() {
+        var li = createLi();
+        if (li == undefined) {
+            alert("输入的不是一个数值！");
+            return;
+        }
+        list.insertBefore(li, list.firstChild);
+    }
+    function rightIn() {
+        var li = createLi();
+        if (li == undefined) {
+            alert("输入的不是一个数值！");
+            return;
+        }
+        list.appendChild(li);
+    }
+    function leftOut() {
+        var num = list.firstChild.innerHTML;
+        list.removeChild(list.firstChild);
+        alert("删除" + num);
+    }
+    function rightOut() {
+        var num = list.lastChild.innerHTML;
+        list.removeChild(list.lastChild);
+        alert("删除" + num);
+    }
+    function init() {
+        var lei = document.getElementById("left-in");
+        var rii = document.getElementById("right-in");
+        var leo = document.getElementById("left-out");
+        var rio = document.getElementById("right-out");
+        lei.onclick = leftIn;
+        rii.onclick = rightIn;
+        leo.onclick = leftOut;
+        rio.onclick = rightOut;
+    }
+    init();
+</script>
+</body>
+</html>
