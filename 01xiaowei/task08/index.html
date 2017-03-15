@@ -6,14 +6,22 @@
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
         .container-fluid{
             border: 1px solid #999;
-            /*padding: 20px;*/
+            padding: 10px;
         }
         .row{
-            padding: 20px;
+            width: 100%;
+            margin-left: 0px;
         }
-        .row div{
+        [class *="col"] {
+            padding: 10px;
+        }
+        .row .box{
             height: 50px;
             background-color: #eee;
             border: 1px solid #999;
@@ -23,21 +31,21 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-4 col-xs-6">1</div>
-        <div class="col-sm-4 col-xs-6">2</div>
-        <div class="col-sm-4 col-xs-12">3</div>
+        <div class="col-sm-4 col-xs-6"><div class="box">1</div></div>
+        <div class="col-sm-4 col-xs-6"><div class="box">2</div></div>
+        <div class="col-sm-4 col-xs-12"><div class="box">3</div></div>
     </div>
     <div class="row">
-        <div class="col-sm-3 col-xs-3">4</div>
-        <div class="col-sm-6 col-xs-6">5</div>
-        <div class="col-sm-3 col-xs-3">6</div>
+        <div class="col-sm-3 col-xs-3"><div class="box">4</div></div>
+        <div class="col-sm-6 col-xs-6"><div class="box">5</div></div>
+        <div class="col-sm-3 col-xs-3"><div class="box">6</div></div>
     </div>
     <div class="row">
-        <div class="col-sm-1 col-xs-2">7</div>
-        <div class="col-sm-1 col-xs-2">8</div>
-        <div class="col-sm-2 col-xs-8">9</div>
-        <div class="col-sm-2 col-xs-3">10</div>
-        <div class="col-sm-6 col-xs-3">11</div>
+        <div class="col-sm-1 col-xs-2"><div class="box">7</div></div>
+        <div class="col-sm-1 col-xs-2"><div class="box">8</div></div>
+        <div class="col-sm-2 col-xs-8"><div class="box">9</div></div>
+        <div class="col-sm-2 col-xs-3"><div class="box">10</div></div>
+        <div class="col-sm-6 col-xs-3"><div class="box">11</div></div>
     </div>
 </div>
 
