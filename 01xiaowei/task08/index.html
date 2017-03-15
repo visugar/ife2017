@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>flex流式布局</title>
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <style>
         body{
             margin: 0;
@@ -16,15 +14,51 @@
         }
         .row{
             width: 100%;
-            margin-left: 0px;
+            margin-left: 0;
         }
         [class *="col"] {
+            display: inline-block;
             padding: 10px;
         }
         .row .box{
             height: 50px;
             background-color: #eee;
             border: 1px solid #999;
+        }
+        @media (max-width:768px) {
+            .col-xs-2 {
+                width: calc(16.666% - 24px );
+            }
+            .col-xs-3 {
+                width: calc(25% - 24px );
+            }
+            .col-xs-6 {
+                width: calc(50% - 24px );
+            }
+            .col-xs-8 {
+                width: calc(66.666% - 24px );
+            }
+            .col-xs-12 {
+                width: calc(100% - 24px );
+            }
+        }
+
+        @media (min-width:769px) {
+            .col-sm-1 {
+                width: calc(8.333% - 24px );
+            }
+            .col-sm-2 {
+                width: calc(16.666% - 24px );
+            }
+            .col-sm-3 {
+                width: calc(25% - 24px );
+            }
+            .col-sm-4 {
+                width: calc(33.333% - 24px );
+            }
+            .col-sm-6 {
+                width: calc(50% - 24px );
+            }
         }
     </style>
 </head>
@@ -48,11 +82,5 @@
         <div class="col-sm-6 col-xs-3"><div class="box">11</div></div>
     </div>
 </div>
-
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-<script>
-
-</script>
 </body>
 </html>
