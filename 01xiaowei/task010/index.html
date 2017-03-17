@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex弹性布局</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #eee;
+        }
+
+        .box-wrap {
+            border: 1px solid #ccc;
+            display: flex;
+            padding: 10px 0;
+            width: auto;
+        }
+
+        .box {
+            width: 150px;
+            border: 1px solid red;
+            margin: 10px 20px;
+        }
+
+        .box1 {
+            height: 120px;
+        }
+
+        .box2 {
+            height: 100px;
+        }
+
+        .box3 {
+            height: 40px;
+        }
+
+        .box4 {
+            height: 200px;
+            border: 1px solid blue;
+        }
+
+        @media (min-width: 640px) {
+            .box-wrap {
+                justify-content: flex-start;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 639px) {
+            .box-wrap {
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-wrap: wrap;
+            }
+
+            .box4 {
+                order: -1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <div class="box-wrap">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+    </div>
+</div>
+</body>
+</html>

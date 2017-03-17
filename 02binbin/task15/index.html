@@ -136,6 +136,7 @@
         var e = e || window.event;
         var target = e.target || e.srcElement;
         if (target && target.nodeName == 'LI') {
+            alert(target.innerText);
             num.removeChild(target);
         }
     }

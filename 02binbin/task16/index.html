@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟★队列</title>
+    <style>
+        .num li {
+            display: inline-block;
+            list-style: none;
+            background-color: #72b16a;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .dis {
+            display: none;
+            color: red;
+        }
+
+        .btn-wrap {
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px 100px;
+            border-radius: 8px;
+            background-color: #B6E4EF;
+        }
+
+        .btn-wrap textarea {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .btn-wrap .btn {
+            width: 106px;
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+            margin: 0 20px 10px 0;
+            background-color: #EFD09F;
+            font-weight: bolder;
+            text-align: center;
+            color: #fff;
+        }
+
+        .btn-wrap .rt-out {
+            margin-right: 0;
+        }
+
+        .btn-wrap #sech-key, .btn-wrap #sech {
+            height: 30px;
+            border-radius: 3px;
+            border: none;
+        }
+
+        .btn-wrap #sech-key {
+            width: 200px;
+            padding-left: 10px;
+        }
+
+        .btn-wrap #sech {
+            width: 80px;
+            height: 32px;
+            margin-top: 2px;
+            padding: 5px 0;
+        }
+
+        .num-wrap {
+            width: 690px;
+            margin: 0 auto;
+            padding: 5px;
+            background-color: #EFEDB3;
+            /*text-align: center;*/
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="btn-wrap">
+    <sapn>请输入任意值：</sapn>
+    <br/>
+    <textarea id="ipt" cols="25" rows="3"></textarea>
+    <span class="dis">输入数字有误,请重输</span><br/>
+    <button class="btn lt-in" type="button">→左侧入</button>
+    <button class="btn rt-in" type="button">←右侧入</button>
+    <button class="btn lt-out" type="button">←左侧出</button>
+    <button class="btn rt-out" type="button">右侧出→</button>
+    <br/>
+    <input type="text" id="sech-key" placeholder="请输入"/>
+    <button id="sech">查询</button>
+
+
+</div>
+<div class="num-wrap">
+    <ul class="num">
+        <li>33</li>
+        <li>10</li>
+        <li>55</li>
+        <li>101</li>
+        <li>46</li>
+    </ul>
+</div>
+<script>
+    var ipt = document.getElementById('ipt');
+    var ltIn = document.getElementsByClassName('lt-in')[0];
+    var rtIn = document.getElementsByClassName('rt-in')[0];
+    var ltOut = document.getElementsByClassName('lt-out')[0];
+    var rtOut = document.getElementsByClassName('rt-out')[0];
+    var dis = document.getElementsByClassName('dis')[0];
+
+    var sechKey = document.getElementById('sech-key');
+    var sech = document.getElementById('sech');
+
+    var num = document.getElementsByClassName('num')[0];
+    var lis = num.getElementsByTagName('li');
+
+    function foo(str) {
+        var temp = str.split(/[\n,、\s\t，]/g);
+        var array = (temp + '').split(',');
+        /*console.log(array);*/
+        replaceEmptyItem(array);
+        /*console.log(array);*/
+        return array;
+    }
+
+    /*去除数组的空项*/
+    function replaceEmptyItem(array) {
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] == "" || typeof(array[i]) == "undefined") {
+                array.splice(i, 1);
+                i = i - 1;
+            }
+        }
+    }
+
+    /*左侧插入*/
+    function ltInFunc() {
+        var arr = foo(ipt.value);
+
+        if (arr.length == 0) {
+            dis.style.display = 'inline';
+        } else {
+            for (var i = 0; i < arr.length; i++) {
+                var ctLi = document.createElement('li');
+                ctLi.innerText = arr[i];
+                num.insertBefore(ctLi, lis[0]);
+            }
+            ipt.value = "";
+        }
+
+        ipt.onfocus = function () {
+            dis.style.display = 'none';
+        }
+    }
+
+    /*右侧插入*/
+    function rtInFunc() {
+        var arr = foo(ipt.value);
+        if (arr.length == 0) {
+            dis.style.display = 'inline';
+        } else {
+            for (var i = 0; i < arr.length; i++) {
+                var ctLi = document.createElement('li');
+                ctLi.innerText = arr[i];
+                num.appendChild(ctLi);
+                ipt.value = "";
+            }
+        }
+        ipt.onfocus = function () {
+            dis.style.display = 'none';
+        }
+    }
+
+    /*左侧出*/
+    function ltOutFunc() {
+        var delt = lis[0].innerText;
+        num.removeChild(lis[0]);
+        alert('您删除的数字是' + delt);
+    }
+
+    /*右侧出*/
+    function rtOutFunc() {
+
+        var len = lis.length;
+        var dert = lis[len - 1].innerText;
+        num.removeChild(lis[len - 1]);
+        alert('您删除的数字是' + dert);
+    }
+
+    /*删除所点击的数字*/
+    num.onclick = function (e) {
+        var e = e || window.event;
+        var target = e.target || e.srcElement;
+        if (target && target.nodeName == 'LI') {
+            alert(target.innerText);
+            num.removeChild(target);
+        }
+
+    }
+
+    /*查询匹配*/
+    function lookFor() {
+        var sechVal = sechKey.value;
+        var len = lis.length;
+        for (var i = 0; i < len; i++) {
+            var con = lis[i].textContent;
+            if (con.indexOf(sechVal, 0) > -1) {
+                lis[i].style.color = 'red';
+            }
+        }
+        /*sechKey.value = '';*/
+        sechKey.onfocus = function () {
+            for (var j = 0; j < len; j++) {
+                lis[j].style.color = '#000';
+            }
+        }
+    }
+
+    ltIn.onclick = ltInFunc;
+    rtIn.onclick = rtInFunc;
+    ltOut.onclick = ltOutFunc;
+    rtOut.onclick = rtOutFunc;
+
+    sech.onclick = lookFor;
+
+</script>
+</body>
+</html>
