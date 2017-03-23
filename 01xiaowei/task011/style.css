@@ -32,3 +32,199 @@ header h3{
     text-align: center;
 }
 
+nav, .tag-wrap, .col-wrap{
+    width:100%;
+    background-color: #fff;
+}
+
+.nav-wrap li{
+    width: 20%;
+    display: inline-block;
+    list-style: none;
+    margin-right: -5px;
+}
+
+.nav-wrap li a{
+    display: block;
+    width: 100%;
+    height: 40px;
+    font: 14px/40px 'microsoft yahei';
+    text-align: center;
+    text-decoration: none;
+    color: #3c3c3c;
+}
+.nav-wrap li a:hover{
+    height: 37px;
+    border-bottom: 3px solid #91D4DA;
+}
+.loop-img{
+    width: 100%;
+}
+.loop-img img{
+    width: 100%;
+    height: 180px;
+}
+
+.tag-wrap{
+    width: 100%;
+    height: 90px;
+}
+
+.tag-wrap li{
+    display: inline-block;
+    width: 20%;
+    margin-right: -5px;
+    text-align: center;
+}
+
+.tag-wrap li img{
+    width: 40px;
+    height: 40px;
+    margin: 10px 0 7px 0;
+    border-radius: 20px;
+    background-color: #03C9D5;
+}
+.tag-wrap h4{
+    font: bolder 12px 'microsoft yahei';
+    color: #5a5b5b;
+}
+
+.col-wrap{
+    width: 100%;
+}
+
+.col{
+    box-sizing: border-box;
+    height: 90%;
+    width: 33.33%;
+    margin: 5% -5px 5% 0;
+    text-align: center;
+    display: inline-block;
+}
+.col img{
+    width: 85%;
+    height: 65%;
+}
+.col-wrap .col1, .col-wrap .col2{
+    border-right: 1px solid #ccc;
+}
+
+.col h3{
+    font: bolder 14px 'microsoft';
+    color: #5a5b5b;
+}
+
+.col h5{
+    font: bolder 12px 'microsoft';
+    color: #5a5b5b;
+    margin-top: 5px;
+}
+
+.mod{
+    background-color: #fff;
+    margin-top:10px;
+}
+.mod h3{
+    font: bolder 14px 'microsoft';
+    color: #5a5b5b;
+    padding: 8px 4%;
+}
+
+.mod-wrap{
+    width: 92%;
+    margin: 13px auto 5px;
+}
+
+.clearfix:after{
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+.clearfix{
+    zoom:1;
+}
+
+.mod-img{
+    float: left;
+    width: 26%;
+
+}
+
+.mod-img img{
+    width: 100%;
+    height: 80px;
+    margin-bottom: 5px;
+}
+
+.mod-wd{
+    width: 70%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.mod-wd .md-wd-item{
+    display: inline-block;
+    width: 48%;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    padding: 7px 0;
+    text-align: center;
+    background-color: #F8F8F8;
+}
+.mod-wd .md-wd-item a{
+    font: 12px 'microsoft';
+    color: #3c3c3c;
+    text-decoration: none;
+}
+
+.paper-wrap{
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.paper{
+    margin: 8px 0;
+}
+.pp-img{
+    float: left;
+    width: 30%;
+}
+.pp-img img{
+    width: 100%;
+    height: 80px;
+}
+.pp1 .pp-wd small, .pp2 .pp-wd small{
+    position: absolute;
+    bottom: 0;
+}
+.paper h3{
+    font-size:14px;
+    color: #5a5b5b;
+}
+.paper small{
+    font-size: 12px;
+    color: #ccc;
+}
+.pp-wd{
+    overflow: hidden;
+    padding-left: 10px;
+    height: 80px;
+    position: relative;
+}
+
+.pp-img3 img{
+    width: 32%;
+    height: 80px;
+    margin-top: 8px;
+}
+
+footer h4{
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    text-align: center;
+}

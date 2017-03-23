@@ -52,5 +52,15 @@
 
 > 基于flex的特性，实现一个简单的flex弹性布局
 
+### 11. task011
+- [手机常见页面布局](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/01xiaowei/task011/index.html)
+
+> 手机常见页面的实现（由于了解的比较少，写的比较粗糙，也未作兼容）
+
+### 12. task012
+- [CSS3新特性](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/01xiaowei/task012/index.html)
+
+> 实现CSS3的特性的效果实现
+
 
 

@@ -1,0 +1,80 @@
+#container{
+    width: 700px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.tb-wrap table{
+    margin: 0 auto;
+}
+.tb-wrap table th{
+    background-color: #000;
+    color: #fff;
+}
+
+.tb-wrap tbody tr:nth-child(even){
+    background-color: #9d9d9d;
+}
+.tb-wrap tbody tr:nth-child(-n+3){
+    color: #FF0000;
+}
+
+.box{
+    width: 200px;
+    height: 30px;
+    margin: 0 auto;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    -webkit-box-shadow:  0 0 2px 3px blue;
+    -moz-box-shadow:  0 0 2px 2px blue;
+    box-shadow:  0 0 2px 3px blue;
+}
+
+.img-wrap{
+    position: relative;
+    width: 500px;
+    height: 300px;
+    margin: 100px auto;
+    overflow: hidden;
+}
+.img-container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 500%; /*模拟横排三张图片*/
+    height: 100%;
+    font-size: 0;
+
+    -webkit-transform: translate(-80%,0);
+    -moz-transform: translate(-80%,0);
+    -ms-transform: translate(-80%,0);
+    -o-transform: translate(-80%,0);
+    transform: translate(-80%,0);
+
+    animation: loop 15S linear infinite;
+}
+
+@keyframes loop {
+    0%{  transform: translate(-80%,0);  }
+    15%{ transform: translate(-80%,0); }
+
+    20%{ transform: translate(-60%,0); }
+    35%{ transform: translate(-60%,0); }
+
+    40%{ transform: translate(-40%,0); }
+    55%{ transform: translate(-40%,0); }
+
+    60%{ transform: translate(-20%,0); }
+    75%{ transform: translate(-20%,0); }
+
+    80%{ transform: translate(0,0); }
+    95%{ transform: translate(0,0); }
+
+    100%{ transform: translate(-80%,0); }
+
+}
+
+.imgs{
+    width: 500px;
+    height: 300px;
+}
