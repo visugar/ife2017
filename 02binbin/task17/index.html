@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二叉树遍历的三种方式</title>
+    <style>
+        div{
+            border:1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            background-color: #fff;
+        }
+        .item1{
+            display: flex;
+        }
+        .item2{
+            flex: 1;
+            display: flex;
+        }
+        .item3{
+            flex: 1;
+            display: flex;
+        }
+        .item4{
+            flex:1;
+        }
+        .color{
+            background-color: #C7DD8B;
+        }
+    </style>
+</head>
+<body>
+    <div class="item1">
+        <div class="item2 item21">
+            <div class="item3 item31">
+                <div class="item4 item41"></div>
+                <div class="item4 item42"></div>
+            </div>
+            <div class="item3 item32">
+                <div class="item4 item43"></div>
+                <div class="item4 item44"></div>
+            </div>
+        </div>
+        <div class="item2 item22">
+            <div class="item3 item33">
+                <div class="item4 item45"></div>
+                <div class="item4 item46"></div>
+            </div>
+            <div class="item3 item34">
+                <div class="item4 item47"></div>
+                <div class="item4 item48"></div>
+            </div>
+        </div>
+    </div>
+
+<div class="btn-wrap">
+    <h3>二叉遍历演示</h3>
+    <button class="btn btn1" type="button">前序</button>
+    <button class="btn btn2" type="button">中序</button>
+    <button class="btn btn3" type="button">后序</button>
+    <p>（1）前序遍历，从根节点，到左子树，再到右子树，简称根左右(DLR)。</p>
+    <p>（2）中序遍历，从左节点，到根节点，再到右子树，简称左根右(LDR)。</p>
+    <p>（3）后序遍历，从左子树，到右子树，再到根节点，简称左右根(LRD)。</p>
+</div>
+
+<script>
+    var btn1 = document.getElementsByClassName('btn')[0];
+    var btn2 = document.getElementsByClassName('btn')[1];
+    var btn3 = document.getElementsByClassName('btn')[2];
+
+    var root = document.getElementsByClassName('item1')[0];
+    var arr = []; /*便于保存遍历路径*/
+    var last;  /*保存当前遍历到的节点*/
+    var flag = false;
+
+    /*前序触发按钮*/
+    btn1.onclick = function () {
+        if(!flag){
+            flag = true;
+            init();
+            dlr(root);
+            console.log(arr);
+            changeColor();
+        }
+
+    }
+
+    /*中序触发按钮*/
+    btn2.onclick = function () {
+        if(!flag){
+            flag = true;
+            init();
+            ldr(root);
+            console.log(arr);
+            changeColor();
+        }
+
+    }
+
+    /*后序触发按钮*/
+    btn3.onclick = function () {
+        if(!flag){
+            flag = true;
+            init();
+            lrd(root);
+            console.log(arr);
+            changeColor();
+        }
+
+    }
+
+    /*前序*/
+    function dlr(node) {
+        if(node){
+            arr.push(node);
+            dlr(node.firstElementChild);
+            dlr(node.lastElementChild);
+        }
+    }
+
+    /*中序*/
+    function ldr(node) {
+        if(node){
+            ldr(node.firstElementChild);
+            arr.push(node);
+            ldr(node.lastElementChild);
+        }
+    }
+
+    /*后序*/
+    function lrd(node) {
+        if(node){
+            lrd(node.firstElementChild);
+            lrd(node.lastElementChild);
+            arr.push(node);
+
+        }
+    }
+    /*颜色显示,使用了闭包函数,可以保存i变量,然后在规定时间后触发*/
+    function changeColor() {
+        for (var i=0;i<arr.length;i++){
+            setTimeout(function (i){
+                return function () {
+                    if (i == arr.length-1){
+                        flag = false;
+                    }
+                    if (last){
+                        last.style.backgroundColor = '#fff';
+                    }
+                    arr[i].style.backgroundColor = '#C7DD8B';
+                    last = arr[i];
+                }
+            }(i),i*1000);
+        }
+    }
+
+
+    /*遍历前进行初始化*/
+    function init() {
+        arr = [];
+        if (last){
+            last.style.backgroundColor = '#fff';
+        }
+    }
+</script>
+</body>
+</html>

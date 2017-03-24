@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS验证</title>
+    <style>
+        #container{
+            width: 480px;
+            height: 320px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #DEE2DE;
+        }
+
+        #form1 label{
+            width: 100%;
+            height: 100px;
+        }
+        #form1 input{
+            width: 310px;
+            height: 30px;
+            border-radius: 4px;
+            margin: 30px 10px 0;
+            border: 2px solid #c0c0c0;
+        }
+        #form1 .btn{
+            width: 100px;
+            height: 34px;
+            border-radius: 4px;
+            border: none;
+            background-color: #2aabd2;
+        }
+        #form1 .hd{
+            visibility: hidden;
+            padding-left: 48px;
+            font: 14px 'microsoft';
+        }
+        #form1 .hd1{
+            color: #5a5b5b;
+        }
+        #form1 .hd2{
+            color: #b92c28;
+        }
+        #form1 .hd3{
+            color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <form id="form1">
+        <label for="name1">
+            名称
+            <input type="text" id="name1">
+            <button type="button" class="btn btn1">验证</button>
+        </label>
+        <div class="hd hd1">必填，长度为4~16个字符</div>
+        <label for="name1">
+            名称
+            <input type="text" id="name2">
+            <button type="button" class="btn btn2">验证</button>
+        </label>
+        <div class="hd hd2">姓名不能为空</div>
+        <label for="name1">
+            名称
+            <input type="text" id="name3">
+            <button type="button" class="btn btn3">验证</button>
+        </label>
+        <div class="hd hd3">名称格式不正确</div>
+    </form>
+</div>
+<script>
+    var btn1 = document.getElementsByClassName('btn')[0];
+    var btn2 = document.getElementsByClassName('btn')[1];
+    var btn3 = document.getElementsByClassName('btn')[2];
+
+    var ipt1 = document.getElementById('name1');
+    var ipt2 = document.getElementById('name2');
+    var ipt3 = document.getElementById('name3');
+
+    var hd1 = document.getElementsByClassName('hd')[0];
+    var hd2 = document.getElementsByClassName('hd')[1];
+    var hd3 = document.getElementsByClassName('hd')[2];
+
+
+    
+    function getStr1() {
+        var val = (ipt1.value).replace(/\s/g,'');
+        var len = val.length;
+        var charsCh = 0;
+        var charsEh = 0;
+
+        for(var i=0;i<len;i++){
+            var c = val.charCodeAt(i);
+            if((c >= 0x0001 && c <= 0X007e) || (0xff60 <= c && c <=0xff9c)){
+                charsEh++;
+            }else {
+                charsCh++
+            }
+
+        }
+        return charsCh*2+charsEh;
+
+    }
+
+    btn1.onclick = function () {
+        var chars = getStr1();
+        console.log(chars);
+
+        if (chars>16 || chars<4){
+            hd1.style.visibility = 'visible';
+            btn1.disabled = true;
+        }
+        ipt1.onfocus=function () {
+            hd1.style.visibility = 'hidden';
+            btn1.disabled = false;
+        }
+    }
+
+    btn2.onclick = function () {
+        var val = ipt2.value;
+        if (val == ""){
+            hd2.style.visibility = 'visible';
+            hd2.style.borderColor = '#b92c28';
+            btn2.disabled = true;
+        }
+        ipt2.onfocus=function () {
+            hd2.style.visibility = 'hidden';
+            hd2.style.borderColor = '#c0c0c0';
+            btn2.disabled = false;
+        }
+    }
+
+    btn3.onclick = function () {
+        var val = ipt3.value;
+        if (val == ""){
+            hd3.style.visibility = 'visible';
+            hd3.style.borderColor = '#b92c28';
+            btn3.disabled = true;
+        }
+        ipt3.onfocus=function () {
+            hd3.style.visibility = 'hidden';
+            hd3.style.borderColor = '#c0c0c0';
+            btn3.disabled = false;
+        }
+    }
+
+</script>
+</body>
+</html>

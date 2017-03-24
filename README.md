@@ -17,10 +17,16 @@
     
 
 ---
-1. 斌斌学院：
+2. 斌斌学院：
     - [task11](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task11/index.html)
     - [task12](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task12/index.html)
     - [task13](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task13/index.html)
     - [task14](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task14/index.html)
     - [task15](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task15/index.html)
     - [task16](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task16/index.html)
+    - [task17](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task17/index.html)
+
+
+---
+2. 斌斌学院：
+    - [task31](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/03yaoyao/task31/index.html)
