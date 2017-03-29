@@ -1,0 +1,156 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 09</title>
+</head>
+
+<body>
+<div class="box">
+    A
+    <div class="item1">
+        B
+        <div class="item2">
+            C
+            <div class="item3">
+                D
+            </div>
+            <div class="item3">
+                E
+            </div>
+        </div>
+        <div class="item2">
+            F
+            <div class="item3">
+                G
+            </div>
+        </div>
+    </div>
+    <div class="item1">
+        H
+        <div class="item2">
+            I
+        </div>
+        <div class="item2">
+            J
+            <div class="item3">
+                K
+            </div>
+            <div class="item3">
+                L
+            </div>
+        </div>
+    </div>
+    <div class="item1">
+        M
+        <div class="item2">
+            N
+            <div class="item3">
+                O
+            </div>
+
+        </div>
+    </div>
+</div>
+<button onclick="preTra()">前序遍历</button>
+<input type="text" id="searchValue"/>
+<button onclick="searchValue()"> 查找</button>
+<input type="text" id="addValue"/>
+<button onclick="addItem()"> 添加</button>
+<button onclick="deleteItem()"> 删除</button>
+<style type="text/css">
+    div {
+        border: 1px solid #000;
+        display: flex;
+        justify-content: flex-start;
+        margin: 10px 10px;
+        background-color: #ffffff;
+    }
+
+    .box {
+        width: 880px;
+        height: 200px;
+    }
+
+    .item1 {
+        width: 250px;
+        height: 160px;
+    }
+
+    .item2 {
+        width: 100px;
+        height: 120px;
+    }
+
+    .item3 {
+        width: 40px;
+        height: 80px;
+    }
+</style>
+<script type="text/javascript">
+    //遍历的nodelist
+    var lis = document.querySelectorAll('.box')
+    //改变颜色用的nodelist
+    var lis2 = document.querySelectorAll('div')
+    //存储遍历结果
+    var state = []
+    //已改变的Node
+    var changeNode;
+    //计数器 用来清除setInterval
+    var i = 0;
+    //查找的value
+    var searchVal;
+    /**
+     前序遍历按钮
+     **/
+    function preTra() {
+        preOrder(lis[0])
+        timer = setInterval(pre, 500)
+    }
+    /**
+     前序遍历函数
+     **/
+    function preOrder(node) {
+        if (node) {
+            state.push(node)
+            for (var i = 0; i < node.children.length; i++) {
+                preOrder(node.children[i])
+            }
+        }
+    }
+    /**
+     查找按钮
+     **/
+    function searchValue() {
+        searchVal = document.getElementById('searchValue').value
+        preOrder(lis[0])
+        timer = setInterval(pre, 500)
+    }
+    /**
+     定时任务
+     **/
+    function pre() {
+        if (i > 0) {
+            changeNode.style.backgroundColor = '#ffffff'
+        }
+        for (var j = 0; j < lis2.length; j++) {
+            if (lis2[j] == state[i]) {
+                changeNode = lis2[j]
+                changeNode.style.backgroundColor = 'red'
+            }
+        }
+        i++
+        if (i == state.length + 1) {
+            clearInterval(timer)
+            if (searchVal) {
+                alert('无此数据')
+            }
+        }
+        if (searchVal && changeNode.firstChild.data.indexOf(searchVal) > 0) {
+            clearInterval(timer)
+        }
+    }
+</script>
+</body>
+
+</html>

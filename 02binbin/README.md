@@ -22,3 +22,6 @@
 
 #### 7. [JS07](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task17/index.html)
 > 使用js来表现二叉树的三种遍历过程（前序/中序/后序）
+
+#### 8. [JS08](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task18/index.html)
+> 使用js来表现多叉树的前序遍历过程，并可以搜索框来搜索匹配的内容

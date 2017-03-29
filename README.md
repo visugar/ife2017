@@ -25,6 +25,7 @@
     - [task15](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task15/index.html)
     - [task16](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task16/index.html)
     - [task17](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task17/index.html)
+    - [task18](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task18/index.html)
 
 
 ---
