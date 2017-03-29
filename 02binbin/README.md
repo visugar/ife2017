@@ -19,3 +19,6 @@
 
 #### 6. [JS06](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task16/index.html)
 > 基于任务四修改成可以添加任意的内容
+
+#### 7. [JS07](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/02binbin/task17/index.html)
+> 使用js来表现二叉树的三种遍历过程（前序/中序/后序）

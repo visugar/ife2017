@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二叉树遍历的三种方式</title>
+    <style>
+        div{
+            border:1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            background-color: #fff;
+        }
+        .item1{
+            display: flex;
+        }
+        .item2{
+            flex: 1;
+            display: flex;
+        }
+        .item3{
+            flex: 1;
+            display: flex;
+        }
+        .item4{
+            flex:1;
+        }
+        .color{
+            background-color: #C7DD8B;
+        }
+    </style>
+</head>
+<body>
+<div class="item1">李健
+    <div class="item2 item21">张杰
+        <div class="item3 item31">谢娜
+            <div class="item4 item41">周杰伦</div>
+            <div class="item4 item42">汪涵</div>
+            <div class="item4 item49">李连杰</div>
+            <div class="item4 item410">徐熙媛</div>
+        </div>
+        <div class="item3 item35">赵又廷</div>
+        <div class="item3 item32">高圆圆
+            <div class="item4 item43">花粥</div>
+            <div class="item4 item44">许嵩</div>
+        </div>
+    </div>
+    <div class="item2 item22">玛莎
+        <div class="item3 item33">石头
+            <div class="item4 item45">怪兽
+                <div class="item5 item51">冠佑</div>
+            </div>
+            <div class="item4 item46">阿信</div>
+            <div class="item4 item412">马頔</div>
+        </div>
+        <div class="item3 item34">高晓松
+            <div class="item4 item47">白岩松</div>
+            <div class="item4 item48">杨澜</div>
+        </div>
+    </div>
+    <div class="item2 item23">罗振宇</div>
+</div>
+
+<div class="btn-wrap">
+    <h3>遍历演示</h3>
+    <button class="btn btn1" type="button">前序</button>
+    <p>（1）遍历方式：从根节点，再从左到右一一遍历。</p>
+</div>
+<div class="sech-wrap">
+    <h3>搜索演示</h3>
+    <input type="text" class="ipt">
+    <button class="btn btn2" type="button">搜索</button>
+    <p>（2）搜索方式：从根节点，再从左到右一一遍历，直到与搜索框内容一致则停下。</p>
+</div>
+
+<script>
+    var  bLi= document.getElementsByClassName('btn')[0];
+    var sech = document.getElementsByClassName('btn')[1];
+    var val = document.getElementsByClassName('ipt')[0];
+
+    var root = document.getElementsByClassName('item1')[0];
+    var arr = []; /*便于保存遍历路径*/
+    var last;  /*保存当前遍历到的节点*/
+    var flag = false;
+    var current;
+    /*遍历触发*/
+    bLi.onclick = function () {
+        if(!flag){
+            flag = true;
+            init();
+            dlr(root);
+            console.log(arr);
+            changeColor();
+        }
+
+    };
+    /*搜索触发按钮*/
+    sech.onclick = function () {
+        if(!flag){
+            flag = true;
+            init();
+            search(root);
+            console.log(arr);
+            changeColor();
+        }
+
+    };
+
+
+    /*前序*/
+    function dlr(node) {
+        if(node){
+            arr.push(node);
+            if (node.hasChildNodes){
+                var nodes = node.childNodes;
+                for (var i=0;i<nodes.length;i++){
+                    current=nodes.item(i);
+                    if(current.nodeType == 1){
+                        dlr(current);
+                    }
+                }
+            }
+        }
+    }
+
+    /*查询匹配*/
+    function search(node) {
+        if (node){
+            arr.push(node);
+                if (node.hasChildNodes){
+                    var nodes = node.childNodes;
+                    for (var j=0;j<nodes.length;j++){
+                        current = nodes.item(j);
+                        if(current.nodeType == 1){
+                            dlr(current);
+                        }else if(current.nodeType == 3){
+
+                        }
+                    }
+                }
+            }
+        }
+
+    /*颜色显示,使用了闭包函数,可以保存i变量,然后在规定时间后触发*/
+    function changeColor() {
+        for (var i=0;i<arr.length;i++){
+            setTimeout(function (i){
+                return function () {
+                    if (i == arr.length-1){
+                        flag = false;
+                    }
+                    if (last){
+                        last.style.backgroundColor = '#fff';
+                    }
+                    arr[i].style.backgroundColor = '#C7DD8B';
+                    last = arr[i];
+                }
+            }(i),i*1000);
+        }
+    }
+
+
+    /*遍历前进行初始化*/
+    function init() {
+        arr = [];
+        if (last){
+            last.style.backgroundColor = '#fff';
+        }
+    }
+</script>
+</body>
+</html>
