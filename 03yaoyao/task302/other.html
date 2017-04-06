@@ -1,0 +1,200 @@
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/css;charset=utf-8'/>
+    <script language="JavaScript" src='checkform.js'></script>
+    <title>表单验证</title>
+    <style>
+        .inputTip {
+            readonly: readonly;
+            width: 250px;
+            border: 0;
+            color: #666666;
+            font-size: 10px;
+        }
+
+        .okTip {
+            readonly: readonly;
+            width: 250px;
+            border: 0;
+            color: green;
+            font-size: 10px;
+        }
+
+        .errorTip {
+            readonly: readonly;
+            width: 250px;
+            border: 0;
+            color: red;
+            font-size: 10px;
+        }
+    </style>
+
+</head>
+<body>
+<form name="regist" onsubmit="return checkAll()" target="_self" action="http://baidu.com">
+    <table cellpadding='5' cellspacing='2' align='center'>
+        <tbody>
+        <tr>
+            <td>*用户名：</td>
+            <td><input type='text' name="userName" onblur="checkUserName(this,'msg_userName')"
+                       onfocus="input('msg_userName')"/></td>
+            <td><input class="inputTip" readonly="readonly" type="text" id='msg_userName'/></td>
+        </tr>
+        <tr>
+            <td>*密码：</td>
+            <td><input type='password' name="pwd" onfocus="input('msg_pwd')" onblur="checkPwd(this,'msg_pwd')"/></td>
+            <td><input class="inputTip" readonly="readonly" type="text" id="msg_pwd"/></td>
+        </tr>
+        <tr>
+            <td>*确认密码：</td>
+            <td><input type='password' name="repwd" onfocus="input('msg_repwd')" onblur="checkRepwd(this,'msg_repwd')"/>
+            </td>
+            <td><input class="inputTip" readonly="readonly" type="text" id="msg_repwd"/></td>
+        </tr>
+        <tr>
+            <td>*性别：</td>
+            <td>
+                <input type='radio' name="sex" value='man' checked='checked'/>男
+                <input type="radio" name="sex" value='women'/>女
+            </td>
+            <td><input class="inputTip" readonly="readonly" type="text" id="msg_sex"/></td>
+        </tr>
+        <tr>
+            <td>*邮箱：</td>
+            <td><input type='text' name="email" onfocus="input('msg_email')" onblur="checkEmail(this,'msg_email')"/>
+            </td>
+            <td><input class="inputTip" readonly="readonly" type="text" id='msg_email'/></td>
+        </tr>
+        <tr>
+            <td>*QQ：</td>
+            <td><input type='text' name="qq" onfocus="input('msg_qq')" onblur="checkQq(this,'msg_qq')"/></td>
+            <td><input class="inputTip" readonly="readonly" type="text" id="msg_qq"/>
+            <td>
+        </tr>
+        <tr>
+            <td>备注：</td>
+            <td colspan='2'><textarea rows='8' cols='19' name="extra"></textarea></td>
+        </tr>
+        <tr>
+            <td colspan='2' align='center'>
+                <input type='submit' value='提交' style="width:60px;height:30px;"/>
+                <input type='reset' value="重置" onclick="myReset()" style="width:60px;height:30px;"/>
+            </td>
+        </tr>
+        <tbody>
+    </table>
+</form>
+
+<script>
+    //提示正常输入
+    function input(msgId) {
+        var msg = document.getElementById(msgId);
+        msg.className = 'inputTip';
+        if (msgId == "msg_userName") {
+            msg.value = "用户名6~18位字母开头，只包含字母、数字、_";
+        }
+        if (msgId == "msg_pwd") {
+            msg.value = "6~18位，只包含字母、数字、_";
+        }
+        if (msgId == "msg_repwd") {
+            msg.value = "必须和上面的密码一致";
+        }
+        if (msgId == "msg_email") {
+            msg.value = "支持国内大多数邮箱";
+        }
+        if (msgId == "msg_qq") {
+            msg.value = "请输入真实的QQ号";
+        }
+    }
+    /**
+     显示提示
+     value:输入的字符串
+     reg：正则表达式
+     msg:消息显示对象
+     */
+    function showMsg(value, reg, msg) {
+        if (value == "") {
+            msg.className = "errorTip";
+            msg.value = "×不能为空！";
+            return false;
+        }
+        else if (reg.test(value)) {
+            msg.className = "okTip";
+            msg.value = "√";
+            return true;
+        } else {
+            msg.className = "errorTip";
+            msg.value = "×格式有误！";
+            return false;
+        }
+    }
+    var userName_bool = false;
+    var pwd_bool = false;
+    var repwd_bool = false;
+    var email_bool = false;
+    var qq_bool = false;
+
+    //检查用户名是否合法
+    function checkUserName(obj, msgId) {
+
+        var userName = obj.value;
+        var msg = document.getElementById(msgId);
+        var reg = /^[A-Za-z]\w{5,17}$/;
+        return userName_bool = showMsg(userName, reg, msg);
+    }
+    //检查密码是否合法
+    function checkPwd(obj, msgId) {
+        var pwd = obj.value;
+        var msg = document.getElementById(msgId);
+        var reg = /^\w{6,18}$/;
+        return pwd_bool = showMsg(pwd, reg, msg);
+    }
+    function checkRepwd(obj, msgId) {
+        var pwd = document.forms['regist'].elements['pwd'].value;
+        var repwd = obj.value;
+        var msg = document.getElementById(msgId);
+        if (pwd_bool) {
+            if (repwd == "") {
+                msg.className = "errorTip";
+                msg.innerHTML = "×用户名不能为空！";
+                return repwd_bool = false;
+            } else if (repwd == pwd) {
+                msg.className = "okTip";
+                msg.innerHTML = "√";
+                return repwd_bool = true
+            } else {
+                msg.className = "errorTip";
+                msg.innerHTML = "×两次密码不一样！";
+                return repwd_bool = false;
+
+            }
+        }
+        return repwd_bool = false;
+    }
+    //邮箱 fu_long_fl@sina.com.cn .gov
+    function checkEmail(obj, msgId) {
+        var email = obj.value;
+        var msg = document.getElementById(msgId);
+        var reg = /^\w+@\w+(\.\w+)+$/;
+        return email_bool = showMsg(email, reg, msg);
+    }
+    function checkQq(obj, msgId) {
+        var qq = obj.value;
+        var msg = document.getElementById(msgId);
+        var reg = /^\d{6,12}$/;
+        return qq_bool = showMsg(qq, reg, msg);
+    }
+    function checkAll() {
+        return userName_bool && pwd_bool && repwd_bool && email_bool && qq_bool;
+    }
+    function myReset() {
+        userName_bool = false;
+        pwd_bool = false;
+        repwd_bool = false;
+        email_bool = false;
+        qq_bool = false;
+    }
+</script>
+</body>
+</html>
+

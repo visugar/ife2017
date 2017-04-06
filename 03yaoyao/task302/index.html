@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多个表单验证</title>
+    <style>
+        #container{
+            width: 600px;
+            height: 450px;
+        }
+        #container fieldset{
+            border-radius: 6px;
+            width: 95%;
+            height: 95%;
+        }
+        #form1 label{
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+            padding-right: 15px;
+        }
+        #form1 input{
+            width: 400px;
+            height: 30px;
+            margin: 20px 0 4px 0;
+            border-radius: 2px;
+            border: 1px solid #ccc;
+        }
+        #form1 .btn{
+            width: 80px;
+            height: 30px;
+            border: none;
+            border-radius: 6px;
+            margin-top: 10px;
+            color: #fff;
+            background-color: #2e6da4;
+            /*margin-left: 442px;*/
+        }
+        #form1 .su-btn{
+            margin-left: 358px;
+        }
+        #form1 .dis{
+            visibility: hidden;
+            font: 12px '黑体';
+            color: #3c3c3c;
+            padding-left: 120px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <fieldset>
+            <legend>表单验证</legend>
+        <form action="#" id="form1">
+            <div class="username">
+                <label for="name">名称</label>
+                <input type="text" id="name">
+                <div class="dis us-tip">*</div>
+            </div>
+            <div class="psw">
+                <label for="psw">密码</label>
+                <input type="password" id="psw">
+                <div class="dis psw-tip">啦啦啦啦</div>
+            </div>
+            <div class="pswd">
+                <label for="pswd">密码确认</label>
+                <input type="password" id="pswd">
+                <div class="dis pswd-tip">*</div>
+            </div>
+            <div class="email">
+                <label for="email">邮箱</label>
+                <input type="email" id="email">
+                <div class="dis email-tip">*</div>
+            </div>
+            <div>
+                <label for="tel">手机</label>
+                <input type="tel" id="tel">
+                <div class="dis tel-tip">*</div>
+            </div>
+            <div class="btn-wrap">
+                <button  class="btn su-btn" type="submit">提交</button>
+                <button  class="btn re-btn" type="reset">重置</button>
+            </div>
+        </form>
+        </fieldset>
+    </div>
+<script>
+    var userName = document.getElementById('name');
+    var psw = document.getElementById('psw');
+    var pswd = document.getElementById('pswd');
+    var email = document.getElementById('email');
+    var tel = document.getElementById('tel');
+
+    var ipt = document.getElementsByTagName('input');
+    var dis = document.getElementsByClassName('dis');
+
+    var usTip = document.getElementsByClassName('us-tip')[0];
+    var pswTip = document.getElementsByClassName('psw-tip')[0];
+    var pswdTip = document.getElementsByClassName('pswd-tip')[0];
+    var emailTip = document.getElementsByClassName('email-tip')[0];
+    var telTip = document.getElementsByClassName('tel-tip')[0];
+
+    var suBtn = document.getElementsByClassName('btn')[0];
+    var reBtn = document.getElementsByClassName('btn')[1];
+
+    function onFocu(node) {
+        switch (node){
+            case userName:
+                usTip.style.visibility = 'visible';
+                userName.style.borderColor = '';
+                usTip.style.color = '#3c3c3c';
+                usTip.innerText = '必填，长度为4-16个字符';
+                break;
+            case psw:
+                pswTip.style.visibility = 'visible';
+                psw.style.borderColor = '';
+                pswTip.style.color = '#3c3c3c';
+                pswTip.innerText = '必填，长度为6-16个字符';
+                break;
+            case pswd:
+                pswdTip.style.visibility = 'visible';
+                pswd.style.borderColor = '';
+                pswdTip.style.color = '#3c3c3c';
+                pswdTip.innerText = '再次输入相同密码';
+                break;
+            case email:
+                emailTip.style.visibility = 'visible';
+                emailTip.innerText = '请输入有效的邮箱';
+                break;
+            case tel:
+                telTip.style.visibility = 'visible';
+                telTip.innerText = '请输入11位有效电话号码';
+        }
+    }
+
+    userName.onfocus = function () {
+        onFocu(userName);
+    };
+    psw.onfocus = function () {
+        onFocu(psw);
+    };
+    pswd.onfocus = function () {
+        onFocu(pswd);
+    };
+    email.onfocus = function () {
+        onFocu(email);
+    };
+    tel.onfocus = function () {
+        onFocu(tel);
+    };
+
+    var userName_bool = false;
+    var psw_bool = false;
+    var pswd_bool = false;
+    var email_bool = false;
+    var tel_bool = false;
+
+
+    function checkUsername() {
+        var chars = userName.value.length;
+        if (chars == 0){
+            usTip.style.visibility = 'visible';
+            userName.style.borderColor = 'red';
+            usTip.style.color = 'red';
+            usTip.innerText = '名称不能为空';
+        }else if(chars<16 && chars>4){
+            usTip.style.visibility = 'visible';
+            userName.style.borderColor = 'green';
+            usTip.style.color = 'green';
+            usTip.innerText = '名称可用';
+            userName_bool = true;
+        }else if (chars>16 || chars<4){
+            usTip.style.visibility = 'visible';
+            userName.style.borderColor = 'red';
+            usTip.style.color = 'red';
+            usTip.innerText = '名称错误';
+        }
+        console.log('userName_bool:'+userName_bool);
+        return userName_bool;
+    }
+
+    function checkPsw() {
+        var chars = psw.value.length;
+        if (chars == 0){
+            pswTip.style.visibility = 'visible';
+            psw.style.borderColor = 'red';
+            pswTip.style.color = 'red';
+            pswTip.innerText = '密码不能为空';
+        }else if(chars<=16 && chars>=6){
+            pswTip.style.visibility = 'visible';
+            psw.style.borderColor = 'green';
+            pswTip.style.color = 'green';
+            pswTip.innerText = '密码可用';
+            psw_bool = true;
+        }else if (chars>16 || chars<4){
+            pswTip.style.visibility = 'visible';
+            psw.style.borderColor = 'red';
+            pswTip.style.color = 'red';
+            pswTip.innerText = '密码不可用';
+        }
+        console.log('psw_bool:'+psw_bool);
+        return psw_bool;
+    }
+
+    function checkPswd() {
+        var chars = psw.value.length;
+        var charCurrent = pswd.value.length;
+        if (charCurrent == 0){
+            pswdTip.style.visibility = 'visible';
+            pswd.style.borderColor = 'red';
+            pswdTip.style.color = 'red';
+            pswdTip.innerText = '重复密码不能为空';
+        }else if (charCurrent == chars){
+            pswdTip.style.visibility = 'visible';
+            pswd.style.borderColor = 'green';
+            pswdTip.style.color = 'green';
+            pswdTip.innerText = '密码一致';
+            pswd_bool = true;
+        }else {
+            pswdTip.style.visibility = 'visible';
+            pswd.style.borderColor = 'red';
+            pswdTip.style.color = 'red';
+            pswdTip.innerText = '重复密码不一致';
+        }
+    }
+
+    function checkEmail() {
+        var emailVal = email.value;
+        var reg = /^\w+@\w+(\.\w+)+$/;
+        if (reg.test(emailVal)){
+            emailTip.style.visibility = 'visible';
+            email.style.borderColor = 'green';
+            emailTip.style.color = 'green';
+            emailTip.innerText = '邮箱可用';
+            email_bool = true;
+        }else{
+            emailTip.style.visibility = 'visible';
+            email.style.borderColor = 'red';
+            emailTip.style.color = 'red';
+            emailTip.innerText = '邮箱格式不正确';
+        }
+        return email_bool;
+    }
+
+    function checkTel() {
+        var telVal = tel.value;
+        var reg = /^[0-9]{11}$/
+        if (reg.test(telVal)){
+            telTip.style.visibility = 'visible';
+            tel.style.borderColor = 'green';
+            telTip.style.color = 'green';
+            telTip.innerText = '手机号有效';
+            tel_bool = true;
+        }else{
+            telTip.style.visibility = 'visible';
+            tel.style.borderColor = 'red';
+            telTip.style.color = 'red';
+            telTip.innerText = '手机号不正确';
+        }
+        return tel_bool;
+    }
+    userName.onblur = function(){checkUsername()};
+    psw.onblur = function(){checkPsw()};
+    pswd.onblur = function () {checkPswd()};
+    email.onblur = function () {checkEmail()};
+    tel.onblur = function () {checkTel()};
+
+    suBtn.onclick = function () {
+        checkUsername();
+        checkPsw();
+        checkPswd();
+        checkEmail();
+        checkTel();
+        if (userName_bool && psw_bool &&　pswd_bool && email_bool && tel_bool){
+            alert('提交成功！');
+        }else {
+            alert('提交失败！');
+        }
+    }
+    reBtn.onclick = function () {
+        userName_bool = false;
+        psw_bool = false;
+        pswd_bool = false;
+        email_bool = false;
+        tel_bool = false;
+
+        for (var i=0;i<dis.length;i++){
+            dis[i].style.visibility = 'hidden';
+            ipt[i].style.borderColor = '';
+        }
+
+    }
+</script>
+</body>
+</html>

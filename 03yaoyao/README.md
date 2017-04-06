@@ -4,3 +4,6 @@
 ### 在线预览地址：
 #### 1. [task31](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/03yaoyao/task31/index.html)
 > 实现简单js表单的验证功能
+
+#### 2. [task32](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/03yaoyao/task32/index.html)
+> 实现简单js多个表单的验证功能
