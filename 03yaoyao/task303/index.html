@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单联动</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #content {
+            width: 500px;
+            height: 150px;
+            margin: 0 auto;
+            background-color: #9acfea;
+            text-align: center;
+        }
+
+        .rad-wrap label {
+            display: inline-block;
+            width: 150px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .rad-wrap input[type='radio'] {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .sch-info select {
+            width: 200px;
+            height: 30px;
+            margin: 0 10px;
+            border-radius: 4px;
+        }
+
+        .ntsch-info #work-in {
+            width: 300px;
+            height: 30px;
+            margin-left: 20px;
+            border-radius: 2px;
+            border: none;
+        }
+
+        .ntsch-info {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <form action="#">
+        <div class="rad-wrap">
+            <label for="in-school"><input type="radio" id="in-school" name="person" checked>在校生</label>
+            <label for="nt-school"><input type="radio" id="nt-school" name="person">非在校生</label>
+        </div>
+        <div class="sch-info">
+            <label for="city">学校
+                <select id="city" onchange="showSch(this)">
+                    <option selected>=请选择=</option>
+                </select>
+                <select id="sch">
+                    <option>=请选择=</option>
+                </select>
+            </label>
+        </div>
+        <div class="ntsch-info">
+            <label for="work-in">就业单位 <input type="text" id="work-in"></label>
+        </div>
+    </form>
+</div>
+<script>
+    var inSchool = document.getElementById('in-school');
+    var ntSchool = document.getElementById('nt-school');
+
+    var city = document.getElementById('city');
+    var sch = document.getElementById('sch');
+
+    var schInfo = document.getElementsByClassName('sch-info')[0];
+    var ntschInfo = document.getElementsByClassName('ntsch-info')[0];
+
+    var cityArr = ['北京', '南京', '南昌', '广州', '深圳'];
+    var schArr = [
+        ['北京大学', '清华大学', '北京理工大学', '中国人民大学', '北京师范大学', '北京航空航天大学', '北京科技大学', '北京交通大学'],
+        ['南京大学', '东南大学', '河海大学', '南京农业大学', '南京邮电大学'],
+        ['南昌大学', '江西师范大学', '江西财经大学', '南昌航空大学', '江西理工大学'],
+        ['中山大学', '华南理工大学', '暨南大学', '华南师范大学', '广州大学'],
+        ['深圳大学', '南方科技大学']
+    ];
+
+    /*radio切换事件*/
+    function changePlay(radio, nod) {
+        radio.style.display = 'block';
+        nod.style.display = 'none';
+    }
+
+    inSchool.onclick = function () {
+        changePlay(schInfo, ntschInfo);
+    };
+    ntSchool.onclick = function () {
+        changePlay(ntschInfo, schInfo);
+    };
+
+    /*动态添加城市*/
+    (function addCity() {
+        for (var i = 0; i < cityArr.length; i++) {
+            var cityOption = document.createElement('option');
+            cityOption.innerText = cityArr[i];
+            cityOption.value = i;
+            city.appendChild(cityOption);
+        }
+    })();
+
+    /*city的onchange事件*/
+    function showSch(obj) {
+        var val = obj.options[obj.options.selectedIndex].value;
+        if (val != null) {
+            sch.options.length = 1;
+            addSch(val)
+        }
+    }
+
+    /*显示学校*/
+    function addSch(i) {
+        for (var j = 0; j < schArr[i].length; j++) {
+            var schOption = document.createElement('option');
+            schOption.innerText = schArr[i][j];
+            sch.appendChild(schOption);
+        }
+    }
+</script>
+</body>
+</html>
