@@ -30,6 +30,7 @@
 
 ---
 3. 耀耀学院：
-    - [task31](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/03yaoyao/task301/index.html)
-    - [task32](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/03yaoyao/task302/index.html)
-    - [task33](http://htmlpreview.github.io/?https://github.com/visugar/ife2017/blob/master/03yaoyao/task303/index.html)
+    - [task31](https://visugar.github.io/ife2017/03yaoyao/task301/index.html)
+    - [task32](https://visugar.github.io/ife2017/03yaoyao/task302/index.html)
+    - [task33](https://visugar.github.io/ife2017/03yaoyao/task303/index.html)
+    - [task34](https://visugar.github.io/ife2017/03yaoyao/task304/index.html)

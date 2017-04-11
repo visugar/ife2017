@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>听令小方块</title>
+    <style>
+        #content-wrap {
+
+        }
+
+        .clearfix:after {
+            content: '.';
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+            overflow: hidden;
+        }
+
+        .row .item, .col .item {
+            width: 50px;
+            height: 50px;
+
+        }
+
+        .row .item {
+            display: inline-block;
+            margin-right: -4.5px;
+            text-align: center;
+            line-height: 3em;
+        }
+
+        .row {
+            margin-left: 50px;
+        }
+
+        .col {
+            float: left;
+        }
+
+        .col .item {
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .box-wrap {
+            position: relative;
+            left: 0;
+            top: 0;
+            float: left;
+            width: 500px;
+            height: 500px;
+            border: 2px solid #000;
+            box-sizing: content-box;
+
+        }
+
+        .box {
+            float: left;
+            vertical-align: top;
+            width: 50px;
+            height: 50px;
+            outline: 1px solid #ccc;
+            box-sizing: border-box;
+
+        }
+
+        .flow {
+            position: absolute;
+            top: 150px;
+            left: 200px;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            background: linear-gradient(to bottom, blue 20%, red 20%);
+        }
+
+        .btn-wrap {
+            width: 600px;
+            text-align: center;
+        }
+
+        .btn-wrap button {
+            height: 30px;
+            border: none;
+            padding: 0 10px;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #269abc;
+        }
+
+        .exp {
+            width: 350px;
+            margin-left: 150px;
+        }
+    </style>
+</head>
+<body>
+<div id="content-wrap">
+
+    <!--横标-->
+    <div class="row">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+    </div>
+
+    <div class="main clearfix">
+        <!--竖标-->
+        <div class="col">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+            <div class="item">9</div>
+            <div class="item">10</div>
+        </div>
+
+        <!--方格-->
+        <div class="box-wrap clearfix">
+            <div class="box item00"></div>
+            <div class="box item01"></div>
+            <div class="box item02"></div>
+            <div class="box item03"></div>
+            <div class="box item04"></div>
+            <div class="box item05"></div>
+            <div class="box item06"></div>
+            <div class="box item07"></div>
+            <div class="box item08"></div>
+            <div class="box item09"></div>
+
+            <div class="box item10"></div>
+            <div class="box item11"></div>
+            <div class="box item12"></div>
+            <div class="box item13"></div>
+            <div class="box item14"></div>
+            <div class="box item15"></div>
+            <div class="box item16"></div>
+            <div class="box item17"></div>
+            <div class="box item18"></div>
+            <div class="box item19"></div>
+
+            <div class="box item20"></div>
+            <div class="box item21"></div>
+            <div class="box item22"></div>
+            <div class="box item23"></div>
+            <div class="box item24"></div>
+            <div class="box item25"></div>
+            <div class="box item26"></div>
+            <div class="box item27"></div>
+            <div class="box item28"></div>
+            <div class="box item29"></div>
+
+            <div class="box item30"></div>
+            <div class="box item31"></div>
+            <div class="box item32"></div>
+            <div class="box item33"></div>
+            <div class="box item34"></div>
+            <div class="box item35"></div>
+            <div class="box item36"></div>
+            <div class="box item37"></div>
+            <div class="box item38"></div>
+            <div class="box item39"></div>
+
+            <div class="box item40"></div>
+            <div class="box item41"></div>
+            <div class="box item42"></div>
+            <div class="box item43"></div>
+            <div class="box item44"></div>
+            <div class="box item45"></div>
+            <div class="box item46"></div>
+            <div class="box item47"></div>
+            <div class="box item48"></div>
+            <div class="box item49"></div>
+
+            <div class="box item50"></div>
+            <div class="box item51"></div>
+            <div class="box item52"></div>
+            <div class="box item53"></div>
+            <div class="box item54"></div>
+            <div class="box item55"></div>
+            <div class="box item56"></div>
+            <div class="box item57"></div>
+            <div class="box item58"></div>
+            <div class="box item59"></div>
+
+            <div class="box item60"></div>
+            <div class="box item61"></div>
+            <div class="box item62"></div>
+            <div class="box item63"></div>
+            <div class="box item64"></div>
+            <div class="box item65"></div>
+            <div class="box item66"></div>
+            <div class="box item67"></div>
+            <div class="box item68"></div>
+            <div class="box item69"></div>
+
+            <div class="box item70"></div>
+            <div class="box item71"></div>
+            <div class="box item72"></div>
+            <div class="box item73"></div>
+            <div class="box item74"></div>
+            <div class="box item75"></div>
+            <div class="box item76"></div>
+            <div class="box item77"></div>
+            <div class="box item78"></div>
+            <div class="box item79"></div>
+
+            <div class="box item80"></div>
+            <div class="box item81"></div>
+            <div class="box item82"></div>
+            <div class="box item83"></div>
+            <div class="box item84"></div>
+            <div class="box item85"></div>
+            <div class="box item86"></div>
+            <div class="box item87"></div>
+            <div class="box item88"></div>
+            <div class="box item89"></div>
+
+            <div class="box item90"></div>
+            <div class="box item91"></div>
+            <div class="box item92"></div>
+            <div class="box item93"></div>
+            <div class="box item94"></div>
+            <div class="box item95"></div>
+            <div class="box item96"></div>
+            <div class="box item97"></div>
+            <div class="box item98"></div>
+            <div class="box item99"></div>
+
+            <div class="flow"></div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="btn-wrap">
+    <button type="button" id="go">go</button>
+    <button type="button" id="tun-lef">turn left</button>
+    <button type="button" id="tun-rit">turn right</button>
+    <button type="button" id="tun-bac">turn back</button>
+</div>
+<div class="exp">
+    <h3>游戏说明</h3>
+    <p><strong>go</strong>:向蓝色边方向前进一格</p>
+    <p><strong>turn left</strong>:向左（逆时针）旋转90度</p>
+    <p><strong>turn right</strong>:向右（顺时针）旋转90度</p>
+    <p><strong>turn back</strong>:向右旋转180度</p>
+</div>
+
+<script>
+    var boxWrap = document.getElementsByClassName('box-wrap')[0];
+    var flow = boxWrap.getElementsByClassName('flow')[0];
+
+    var go = document.getElementById('go');
+    var tunLef = document.getElementById('tun-lef');
+    var tunRit = document.getElementById('tun-rit');
+    var tunBac = document.getElementById('tun-bac');
+
+    var deg = 0, direction = 1;
+    function trans(x) {
+        flow.style.transform = 'rotate(' + x + 'deg)';
+        flow.style.mozTransform = 'rotate(' + x + 'deg)';
+        flow.style.webkitTransform = 'rotate(' + x + 'deg)';
+        flow.style.msTransform = 'rotate(' + x + 'deg)';
+        flow.style.oTransform = 'rotate(' + x + 'deg)';
+    }
+    tunLef.onclick = function () {
+        deg -= 90;
+        trans(deg);
+    };
+
+    tunRit.onclick = function () {
+        deg += 90;
+        trans(deg);
+    };
+
+    tunBac.onclick = function () {
+        deg -= 180;
+        trans(deg);
+    };
+
+    function judge() {
+        if (deg >= 0) {
+            var i = deg % 360;
+            switch (i) {
+                case 0:
+                    direction = 1;
+                    break;
+                case 90:
+                    direction = 2;
+                    break;
+                case 180:
+                    direction = 3;
+                    break;
+                case 270:
+                    direction = 4;
+                    break;
+                default:
+                    return;
+            }
+        } else if (deg < 0) {
+            var j = deg % 360;
+            switch (j) {
+                case -90:
+                    direction = 4;
+                    break;
+                case -180:
+                    direction = 3;
+                    break;
+                case -270:
+                    direction = 2;
+                    break;
+                case 0:
+                    direction = 1;
+                    break;
+                default:
+                    return;
+            }
+        }
+    }
+
+    function forwork() {
+        judge();
+        var top = flow.offsetTop;
+        var left = flow.offsetLeft;
+        if (direction === 1) {
+            if (top >= 50) {
+                flow.style.top = (top - 50) + 'px';
+
+            } else {
+                return false;
+            }
+        } else if (direction === 2) {
+            if (left <= 400) {
+                flow.style.left = (left + 50 ) + 'px';
+            } else {
+                return false
+            }
+        } else if (direction === 3) {
+            if (top <= 400) {
+                flow.style.top = (top + 50) + 'px';
+            } else {
+                return false;
+            }
+        } else if (direction === 4) {
+            if (left >= 50) {
+                flow.style.left = (left - 50) + 'px';
+            }
+        }
+    }
+
+    go.onclick = function () {
+        forwork();
+    }
+</script>
+</body>
+</html>
