@@ -13,3 +13,6 @@
 
 #### 4. [task34](https://visugar.github.io/ife2017/03yaoyao/task304/index.html)
 > 实现按命令移动小方块的游戏
+
+#### 5. [task35](https://visugar.github.io/ife2017/03yaoyao/task305/index.html)
+> 实现按命令移动小方块的游戏（命令更多更复杂）

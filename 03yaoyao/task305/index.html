@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <title>听令小方块</title>
     <style>
-        #content-wrap {
+        body {
+            margin: 0;
+            padding: 0;
+        }
 
+        #content-wrap {
+            width: 600px;
+            float: left;
+        }
+
+        .main {
+            margin-bottom: 20px;
         }
 
         .clearfix:after {
@@ -85,14 +95,15 @@
             height: 30px;
             border: none;
             padding: 0 10px;
+            margin-bottom: 10px;
             border-radius: 4px;
             color: #fff;
             background-color: #269abc;
         }
 
         .exp {
-            width: 350px;
-            margin-left: 150px;
+            float: left;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -243,20 +254,40 @@
             <div class="flow"></div>
         </div>
     </div>
-</div>
-<br>
-<div class="btn-wrap">
-    <button type="button" id="go">go</button>
-    <button type="button" id="tun-lef">turn left</button>
-    <button type="button" id="tun-rit">turn right</button>
-    <button type="button" id="tun-bac">turn back</button>
+    <div class="btn-wrap">
+        <button type="button" id="go">go</button>
+        <button type="button" id="tun-lef">turn left</button>
+        <button type="button" id="tun-rit">turn right</button>
+        <button type="button" id="tun-bac">turn back</button>
+    </div>
+    <div class="btn-wrap">
+        <button type="button" id="tra-lef">tra left</button>
+        <button type="button" id="tra-top">tra top</button>
+        <button type="button" id="tra-rig">tra right</button>
+        <button type="button" id="tra-bot">tra bottom</button>
+        <br>
+        <button type="button" id="mov-lef">mov left</button>
+        <button type="button" id="mov-top">mov top</button>
+        <button type="button" id="mov-rig">mov right</button>
+        <button type="button" id="mov-bot">mov bottom</button>
+    </div>
 </div>
 <div class="exp">
-    <h3>游戏说明</h3>
-    <p><strong>go</strong>:向蓝色边方向前进一格</p>
-    <p><strong>turn left</strong>:向左（逆时针）旋转90度</p>
-    <p><strong>turn right</strong>:向右（顺时针）旋转90度</p>
-    <p><strong>turn back</strong>:向右旋转180度</p>
+    <h3>按钮说明</h3>
+    <p><strong>go</strong>: 向蓝色边方向前进一格</p>
+    <p><strong>turn left</strong>: 向左（逆时针）旋转90度</p>
+    <p><strong>turn right</strong>: 向右（顺时针）旋转90度</p>
+    <p><strong>turn back</strong>: 向右旋转180度</p>
+
+    <p><strong>tra left</strong>: 向屏幕的左侧移动一格，方向不变</p>
+    <p><strong>tra top</strong>: 向屏幕的上面移动一格，方向不变</p>
+    <p><strong>tra right</strong>: 向屏幕的右侧移动一格，方向不变</p>
+    <p><strong>tra bottom</strong>: 向屏幕的下面移动一格，方向不变</p>
+
+    <p><strong>mov left</strong>: 方向转向屏幕左侧，并向屏幕的左侧移动一格</p>
+    <p><strong>mov top</strong>: 方向转向屏幕上面，向屏幕的上面移动一格</p>
+    <p><strong>mov right</strong>: 方向转向屏幕右侧，向屏幕的右侧移动一格</p>
+    <p><strong>mov bottom</strong>: 方向转向屏幕下面，向屏幕的下面移动一格</p>
 </div>
 
 <script>
@@ -268,37 +299,56 @@
     var tunRit = document.getElementById('tun-rit');
     var tunBac = document.getElementById('tun-bac');
 
-    /*用于记录角度跟方向*/
-    var deg = 0, direction = 1;
+    var traLef = document.getElementById('tra-lef');
+    var traTop = document.getElementById('tra-top');
+    var traRig = document.getElementById('tra-rig');
+    var traBot = document.getElementById('tra-bot');
 
-    /*旋转*/
-    function trans(x) {
-        flow.style.transform = 'rotate(' + x + 'deg)';
-        flow.style.mozTransform = 'rotate(' + x + 'deg)';
-        flow.style.webkitTransform = 'rotate(' + x + 'deg)';
-        flow.style.msTransform = 'rotate(' + x + 'deg)';
-        flow.style.oTransform = 'rotate(' + x + 'deg)';
+    var movLef = document.getElementById('mov-lef');
+    var movTop = document.getElementById('mov-top');
+    var movRig = document.getElementById('mov-rig');
+    var movBot = document.getElementById('mov-bot');
+
+    var deg = 0, direction = 1;
+    var options = {
+        duration: 1000,
+        iterations: 1,
+        fill: 'forwards'
+    };
+
+    function trans(x, y) {
+        var frames = [
+            {
+                borderRadius: 0,
+                transform: 'rotate(' + x + 'deg)'
+            },
+            {
+                borderRadius: '50%'
+            },
+            {
+                borderRadius: 0,
+                transform: 'rotate(' + y + 'deg)'
+            }
+        ];
+        flow.animate(frames, options);
     }
 
-    /*向左逆时针旋转90度*/
     tunLef.onclick = function () {
+        trans(deg, (deg - 90));
         deg -= 90;
-        trans(deg);
     };
 
-    /*向右顺时针旋转90度*/
     tunRit.onclick = function () {
+        trans(deg, (deg + 90));
         deg += 90;
-        trans(deg);
     };
 
-    /*向右顺时针旋转90度*/
     tunBac.onclick = function () {
-        deg -= 180;
-        trans(deg);
+        trans(deg, (deg + 180));
+        deg += 180;
+
     };
 
-    /*判断当前方向*/
     function judge() {
         if (deg >= 0) {
             var i = deg % 360;
@@ -339,40 +389,223 @@
         }
     }
 
-    /*向当前方向前进一格*/
+    function goFunc(m, n) {
+        var frames = [
+            {
+                top: m + 'px'
+            },
+            {
+                top: n + 'px'
+            }
+        ];
+        flow.animate(frames, options);
+    }
+    function goFunc2(m, n) {
+        var frames = [
+            {
+                left: m + 'px'
+            },
+            {
+                left: n + 'px'
+            }
+        ];
+        flow.animate(frames, options);
+    }
     function forwork() {
         judge();
         var top = flow.offsetTop;
         var left = flow.offsetLeft;
         if (direction === 1) {
             if (top >= 50) {
-                flow.style.top = (top - 50) + 'px';
-
+                goFunc(top, (top - 50));
             } else {
                 return false;
             }
         } else if (direction === 2) {
             if (left <= 400) {
-                flow.style.left = (left + 50 ) + 'px';
+                goFunc2(left, (left + 50));
             } else {
                 return false
             }
         } else if (direction === 3) {
             if (top <= 400) {
-                flow.style.top = (top + 50) + 'px';
+                goFunc(top, (top + 50));
             } else {
                 return false;
             }
         } else if (direction === 4) {
             if (left >= 50) {
-                flow.style.left = (left - 50) + 'px';
+                goFunc2(left, (left - 50));
             }
         }
     }
 
     go.onclick = function () {
         forwork();
+    };
+
+    function traFunc(a, b) {
+        var frames = [
+            {
+                left: a + 'px'
+            },
+            {
+                left: b + 'px'
+            }
+        ];
+        flow.animate(frames, options);
     }
+
+    function traFunc2(a, b) {
+        var frames = [
+            {
+                top: a + 'px'
+            },
+            {
+                top: b + 'px'
+            }
+        ];
+        flow.animate(frames, options);
+    }
+
+
+    traLef.onclick = function () {
+        var top = flow.offsetTop;
+        var left = flow.offsetLeft;
+
+        if (left >= 50 && left <= 400) {
+            traFunc(left, (left - 50));
+        } else {
+            //return false;
+        }
+
+    };
+
+    traRig.onclick = function () {
+        var top = flow.offsetTop;
+        var left = flow.offsetLeft;
+        if (left >= 50 && left <= 400) {
+            traFunc(left, (left + 50));
+        } else {
+            return false;
+        }
+    };
+
+    traTop.onclick = function () {
+        var top = flow.offsetTop;
+        var left = flow.offsetLeft;
+
+        if (top >= 50 && top <= 400) {
+            traFunc2(top, (top - 50));
+        } else {
+            return false;
+        }
+    };
+    traBot.onclick = function () {
+        var top = flow.offsetTop;
+        var left = flow.offsetLeft;
+
+        if (top >= 50 && top <= 400) {
+            traFunc2(top, (top + 50));
+        } else {
+            return false;
+        }
+    };
+
+    function mov(p, q, z, w) {
+        var frames = [
+            {
+                left: p + 'px',
+                borderRadius: 0,
+                transform: 'rotate(' + (z * 90) + 'deg)'
+            },
+            {
+                borderRadius: '50%'
+            },
+            {
+                left: q + 'px',
+                borderRadius: 0,
+                transform: 'rotate(' + w + 'deg)'
+            }
+        ];
+        flow.animate(frames, options);
+    }
+
+    function mov2(p, q, z, w) {
+        var frames = [
+            {
+                top: p + 'px',
+                borderRadius: 0,
+                transform: 'rotate(' + (z * 90) + 'deg)'
+            },
+            {
+                borderRadius: '50%'
+            },
+            {
+                top: q + 'px',
+                borderRadius: 0,
+                transform: 'rotate(' + w + 'deg)'
+            }
+        ];
+        flow.animate(frames, options);
+    }
+
+    movLef.onclick = function () {
+        judge();
+        var top = flow.offsetTop;
+        var left = flow.offsetLeft;
+        var tarDeg = 270;
+        var dir = direction - 1;
+        if (left >= 50 && left <= 400) {
+            mov(left, (left - 50), dir, tarDeg);
+            direction = 4;
+            deg = 270;
+        } else {
+            return false;
+        }
+    };
+    movRig.onclick = function () {
+        judge();
+        var top = flow.offsetTop;
+        var left = flow.offsetLeft;
+        var tarDeg = 90;
+        var dir = direction - 1;
+        if (left >= 50 && left <= 400) {
+            mov(left, (left + 50), dir, tarDeg);
+            direction = 2;
+            deg = 90;
+        } else {
+            return false;
+        }
+    };
+    movTop.onclick = function () {
+        judge();
+        var top = flow.offsetTop;
+        var left = flow.offsetLeft;
+        var tarDeg = 0;
+        var dir = direction - 1;
+        if (top >= 50 && top <= 400) {
+            mov2(top, (top - 50), dir, tarDeg);
+            direction = 1;
+            deg = 0;
+        } else {
+            return false;
+        }
+    };
+    movBot.onclick = function () {
+        judge();
+        var top = flow.offsetTop;
+        var left = flow.offsetLeft;
+        var tarDeg = 180;
+        var dir = direction - 1;
+        if (top >= 50 && top <= 400) {
+            mov2(top, (top + 50), dir, tarDeg);
+            direction = 3;
+            deg = 180;
+        } else {
+            return false;
+        }
+    };
 </script>
 </body>
 </html>
