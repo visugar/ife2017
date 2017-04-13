@@ -316,6 +316,7 @@
         fill: 'forwards'
     };
 
+    /*向左转和向右转的实现函数*/
     function trans(x, y) {
         var frames = [
             {
@@ -333,22 +334,26 @@
         flow.animate(frames, options);
     }
 
+    /*点击向左转后*/
     tunLef.onclick = function () {
         trans(deg, (deg - 90));
         deg -= 90;
     };
 
+    /*点击向右转后*/
     tunRit.onclick = function () {
         trans(deg, (deg + 90));
         deg += 90;
     };
 
+    /*点击向后转*/
     tunBac.onclick = function () {
         trans(deg, (deg + 180));
         deg += 180;
 
     };
 
+    /*方向判断方法*/
     function judge() {
         if (deg >= 0) {
             var i = deg % 360;
@@ -389,6 +394,7 @@
         }
     }
 
+    /*向前一步的方法一（上下）*/
     function goFunc(m, n) {
         var frames = [
             {
@@ -400,6 +406,8 @@
         ];
         flow.animate(frames, options);
     }
+
+    /*向前移动一步的方法二（左右）*/
     function goFunc2(m, n) {
         var frames = [
             {
@@ -411,6 +419,7 @@
         ];
         flow.animate(frames, options);
     }
+    /*向前一步*/
     function forwork() {
         judge();
         var top = flow.offsetTop;
@@ -440,10 +449,12 @@
         }
     }
 
+    /*点击向前一步*/
     go.onclick = function () {
         forwork();
     };
 
+    /*向左右侧移动一格方法*/
     function traFunc(a, b) {
         var frames = [
             {
@@ -456,6 +467,7 @@
         flow.animate(frames, options);
     }
 
+    /*向上下侧移动一格的方法*/
     function traFunc2(a, b) {
         var frames = [
             {
@@ -512,6 +524,7 @@
         }
     };
 
+    /*方向转向左右侧，并向左右侧移动一格*/
     function mov(p, q, z, w) {
         var frames = [
             {
@@ -531,6 +544,7 @@
         flow.animate(frames, options);
     }
 
+    /*方向转向上下侧，并向上下侧移动一格*/
     function mov2(p, q, z, w) {
         var frames = [
             {

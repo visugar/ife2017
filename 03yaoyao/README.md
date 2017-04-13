@@ -16,3 +16,6 @@
 
 #### 5. [task35](https://visugar.github.io/ife2017/03yaoyao/task305/index.html)
 > 实现按命令移动小方块的游戏（命令更多更复杂）
+
+#### 6. [task36](https://visugar.github.io/ife2017/03yaoyao/task306/index.html)
+> 弹窗的显示与隐藏功能

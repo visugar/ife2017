@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UI组件浮出层</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 100%;
+            height: 1200px;
+            background-image: url("./img/01.jpg");
+        }
+
+        #toolTip {
+            width: 400px;
+            height: 250px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 2px;
+            border: 1px solid #ccc;
+            background-color: #F7F7F7;
+            z-index: 999;
+        }
+        .mask{
+            display: none;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            background-color: rgba(144,144,145,0.6);
+        }
+
+        .clearfix:after {
+            content: '.';
+            height: 0;
+            display: block;
+            clear: both;
+            visibility: hidden;
+            overflow: hidden;
+        }
+
+        #header {
+            height: 40px;
+            background-color: #DADAD3;
+
+        }
+
+        #header h3 {
+            float: left;
+            line-height: 40px;
+            padding-left: 5%;
+            width: 85%;
+        }
+
+        #header span {
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        #content p {
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        .btn {
+            width: 70px;
+            height: 30px;
+            border: none;
+            outline: none;/******去除按钮点击后的蓝色边框******/
+            background-color: #DADADA;
+        }
+        .btn:focus{
+            outline: 0; /******去除按钮点击后的蓝色边框******/
+        }
+
+        .btn-wrap {
+            margin-top: 30px;
+            margin-left: 230px;
+        }
+
+        #op-btn {
+            width: 100px;
+            height: 40px;
+            background-color: #2aabd2;
+            margin: 200px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <button type="button" id="op-btn">快来点我丫</button>
+    <div class="mask">
+        <div id="toolTip">
+            <div id="header" class="clearfix">
+                <h3>幸福拍手</h3>
+                <span class="close"><small>关闭</small></span>
+            </div>
+            <div id="content">
+                <p>如果感到幸福你就拍拍手,如果感到幸福你就拍拍手,<br/>
+                    如果感到幸福就快快拍拍手呀,看哪大家一齐拍拍手.<br/>
+                    如果感到幸福你就跺跺脚,如果感到幸福你就跺跺脚,<br/>
+                    如果感到幸福就快快跺跺脚呀,看哪大家一齐跺跺脚.</p>
+                <div class="btn-wrap">
+                    <button type="button" class="btn btn-sure">确定</button>
+                    <button type="button" class="btn btn-cancle">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var opBtn = document.querySelector('#op-btn');
+    var sureBtn = document.querySelector('.btn-sure');
+    var canlBtn = document.querySelector('.btn-cancle');
+    var close = document.querySelector('.close');
+
+    var mask = document.querySelector('.mask');
+
+    /*显示弹窗*/
+    function  tipShow(ev) {
+        var e=ev||event;
+        mask.style.display = 'block';
+        if(e && e.stopPropagation){//阻止冒泡
+            e.stopPropagation();
+        }else{
+            window.event.cancelBubble = true;
+        }
+    }
+
+    /*关闭弹窗*/
+    function closeTip() {
+        mask.style.display = 'none';
+    }
+    opBtn.onclick = function (ev) {
+        tipShow(ev);
+    };
+    close.onclick = function () {
+        closeTip();
+    };
+
+    /*点击弹窗外的部分默认关闭弹窗*/
+    mask.onclick = function (ev) {
+        var e = ev||event;
+        var target = e.target ||e.srcElement;
+        if (target.className == 'mask'){
+            closeTip();
+        }else {
+            return false;
+        }
+        if(e && e.stopPropagation){//阻止冒泡
+            e.stopPropagation();
+        }else{
+            window.event.cancelBubble = true;
+        }
+    }
+</script>
+</body>
+</html>
