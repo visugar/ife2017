@@ -125,9 +125,13 @@
     var close = document.querySelector('.close');
 
     var mask = document.querySelector('.mask');
+    var toolTip = document.querySelector('#toolTip');
 
     /*显示弹窗*/
     function  tipShow(ev) {
+        toolTip.style.top =  '50%';
+        toolTip.style.left = '50%';
+
         var e=ev||event;
         mask.style.display = 'block';
         if(e && e.stopPropagation){//阻止冒泡
@@ -148,6 +152,10 @@
         closeTip();
     };
 
+    canlBtn.onclick = function () {
+        closeTip();
+    };
+
     /*点击弹窗外的部分默认关闭弹窗*/
     mask.onclick = function (ev) {
         var e = ev||event;
@@ -162,7 +170,28 @@
         }else{
             window.event.cancelBubble = true;
         }
-    }
+    };
+
+    //拖动
+    toolTip.onmousedown=function(ev){
+        var e=ev || window.ev,
+            sx=e.clientX,
+            sy=e.clientY,
+            fx=sx-toolTip.offsetLeft, //先获取div和鼠标位置的差的定值
+            fy=sy-toolTip.offsetTop;
+        document.onmousemove=function(ev){
+            var l=ev.clientX-fx,   //每次重新获取鼠标的位置
+            t=ev.clientY-fy;
+            toolTip.style.left=l+'px';
+            toolTip.style.top=t+'px';
+        };
+        toolTip.onmouseup=function(){
+            document.onmousemove=null; //在同一个作用域内才能注销
+            toolTip.onmouseup=null;
+        }
+    };
+
+
 </script>
 </body>
 </html>

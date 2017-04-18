@@ -19,3 +19,6 @@
 
 #### 6. [task36](https://visugar.github.io/ife2017/03yaoyao/task306/index.html)
 > 弹窗的显示与隐藏功能
+
+#### 7. [task37](https://visugar.github.io/ife2017/03yaoyao/task307/index.html)
+> 根据给出的数据动态生成表格，然后在表格中添加升序和降序两种排序按钮
