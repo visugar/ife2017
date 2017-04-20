@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义checkbox按钮样式</title>
+    <style>
+        #container {
+            margin: 30px;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+
+        #container input {
+            display: none;
+        }
+
+        /*伪元素及伪类实现自定义checkbox*/
+        #chec-aft + label, #rad-aft + label {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: #fff;
+            vertical-align: middle;
+            line-height: 14px;
+        }
+
+        #chec-aft:checked + label {
+            border: 2px solid #D50A1A;
+        }
+
+        #chec-aft:checked + label::after {
+            content: '\2714';
+            text-align: center;
+            font-size: 15px;
+            color: #D50A1A;
+        }
+
+        /*伪元素及伪类实现自定义radio*/
+        #rad-aft + label {
+            border-radius: 50%;
+            line-height: 8px;
+        }
+
+        #rad-aft:checked + label {
+            border: 2px solid #D50A1A;
+        }
+
+        #rad-aft:checked + label::after {
+            display: inline-block;
+            content: ' ';
+            width: 8px;
+            height: 8px;
+            line-height: 8px;
+            border-radius: 50%;
+            background-color: #D50A1A;
+        }
+
+        /*雪碧图实现自定义checkbox*/
+        #chec-bg + label, #rad-bg + label {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            /*border: 1px solid #ccc;*/
+            vertical-align: middle;
+            background: url('./img/sprite.png') no-repeat;
+        }
+
+        #chec-bg + label {
+            background-position: -25px -32px;
+        }
+
+        #chec-bg:checked + label {
+            background-position: -59px -32px;
+        }
+
+        /*雪碧图实现自定义radio*/
+        #rad-bg + label {
+            background-position: -24px -10px;
+        }
+
+        #rad-bg:checked + label {
+            background-position: -59px -10px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="ipt-wrap">
+        <h3>伪元素实现：</h3>
+        <input type="checkbox" id="chec-aft">
+        <label for="chec-aft"></label>
+        <span>爱玩耍</span>
+
+        <input type="radio" name="sex" id="rad-aft">
+        <label for="rad-aft"></label>
+        <span>男</span>
+
+    </div>
+    <div class="ipt-wrap">
+        <h3>雪碧图实现:</h3>
+
+        <input type="checkbox" id="chec-bg">
+        <label for="chec-bg"></label>
+        <span>爱学习</span>
+
+        <input type="radio" name="sex" id="rad-bg">
+        <label for="rad-bg"></label>
+        <span>女</span>
+
+    </div>
+
+</div>
+<script>
+
+
+</script>
+</body>
+</html>
