@@ -270,7 +270,7 @@
 ---
 ### 4. 糯米学院：
 
-- **task40 - 自定义checkbox， radio样式**
+- **task406 - 自定义checkbox， radio样式**
     > *任务说明*：深入了解html、label标签，了解CSS边框、背景、伪元素、伪类（注意和伪元素区分）等属性的设置，了解CSS中常见的雪碧图，并能自己制作使用雪碧图
           
     + [源码地址](https://github.com/visugar/ife2017/blob/master/04nuomi/task406/index.html)
@@ -282,3 +282,14 @@
         - [MDN :checked](https://developer.mozilla.org/en-US/docs/Web/CSS/:checked)：了解input的:checked伪类的基本知识以及应用场景
         - [MDN :before](https://developer.mozilla.org/en-US/docs/Web/CSS/::before)：了解input的:before伪元素的基本知识
         - [MDN :after](https://developer.mozilla.org/en-US/docs/Web/CSS/::after)：了解input的:after伪元素的基本知识
+
+- **task408 - 自定义网页右键菜单**
+    > *任务说明*：了解js中的oncontextmenu事件，了解如何获取鼠标位置，了解如何实现页面屏蔽右键菜单
+          
+    + [源码地址](https://github.com/visugar/ife2017/blob/master/04nuomi/task408/index.html)
+    + [预览地址](https://visugar.github.io/ife2017/04nuomi/task408/index.html)
+    + 小结：利用js中的oncontextmenu事件，阻止网页中的默认右键菜单，自定义自己需要的菜单
+    + 参考资料：
+        - [oncontextmnue](http://www.runoob.com/jsref/event-oncontextmenu.html)：了解JavaScript中oncontextmenu的基本知识
+        - [event那些事](http://xchb.work/2016/07/25/event%E9%82%A3%E4%BA%9B%E4%BA%8B/)： 收集整理的事件相关资料
+       

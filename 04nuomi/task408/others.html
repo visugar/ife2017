@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>自定义右键菜单学习</title>
+    <style type="text/css">
+        body{
+            background-color: #eee;
+            font-family: "Microsoft YaHei"
+        }
+        .container{
+            width:500px;
+            margin:50px auto;
+            text-align: center;
+        }
+        .container h1{
+            background-color: #333;
+            color:#fff;
+            padding:15px;
+        }
+        .title{
+            text-align: left;
+            border-left: 3px solid #333;
+            padding: 4px 10px;
+            font-size: 20px;
+            font-weight: 600;
+            margin:35px 0;
+        }
+        .context{
+            border: 2px solid #333;
+            width:70%;
+            margin:20px auto;
+            padding:10px;
+        }
+
+        #supermenu{
+            border: 1px solid #ccc;
+            position: absolute;
+            z-index: 100;
+            background-color:white;
+        }
+        #supermenu ul{
+            padding: 0 0;
+            list-style-type: none;
+            margin:0px;
+        }
+        #supermenu ul li{
+            border-bottom: 1px solid #ccc;
+            padding:4px 0;
+        }
+        #supermenu ul li a{
+            text-decoration: none;
+            color: #333;
+            padding:0px 30px;
+        }
+        #supermenu ul li:hover{
+            background-color: #555;
+            color: #fff;
+        }
+        #supermenu ul li:hover a{
+            color: #fff;
+        }
+        #supermenu ul li:nth-last-child(1){
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>自定义右键菜单</h1>
+    <div class="title">
+        <span>使用contextmenu</span>
+    </div>
+    <h2></h2>
+    <div contextmenu="mymenu" >
+        <div class="context">这里有一个菜单,请在firefox打开哟</div>
+        <menu id="mymenu" type="context">
+            <menuitem label="呼呼" icon="1.jpg" onclick="doSomething()"></menuitem>
+            <menuitem label="嘻嘻" icon="2.jpg" onclick="doSomethingElse()"></menuitem>
+            <menu label="哈哈">
+                <menuitem label="呼呼" icon="1.jpg" onclick="doSomething()"></menuitem>
+                <menuitem label="嘻嘻" icon="2.jpg" onclick="doSomethingElse()"></menuitem>
+            </menu>
+        </menu>
+    </div>
+
+    <div class="title">
+        JS实现自定义右键菜单
+    </div>
+    <div class="menu context">这里还有一个菜单,呼呼</div>
+    <div class="menu context">这里还有一个菜单,嘻嘻</div>
+    <div class="menu context">这里还有一个菜单,哟哟</div>
+    <div id="supermenu" style="display: none;">
+        <ul>
+            <li><a href="#">menu11111</a></li>
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a></li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $=function(element){
+        return document.querySelectorAll(element);
+    }
+    var mymenu=document.getElementById("supermenu");
+
+    //监听contextmenu事件
+    // for(var i=0;i<$(".menu").length;i++){
+    // 	$(".menu")[i].addEventListener("contextmenu",function(e){
+    // 		e.preventDefault();//阻止原有的菜单
+    // 		e.returnValue=false;//在IE中阻止原有的菜单
+
+    // 		mymenu.style.cssText='display: block;'; //先显示后才能获取menu的高宽
+    // 		var menuwidth=mymenu.offsetWidth;//获取自定义菜单的高宽
+    // 		var menuheight=mymenu.offsetHeight;
+    // 		console.log(menuheight,menuwidth);
+    // 		var clientwidth=document.documentElement.clientWidth;//获取当前可视窗口的高宽
+    // 		var clientheight=document.documentElement.clientHeight;
+    // 		if(clientheight-e.pageY>=menuheight){ //底下有足够空间时
+    // 			mymenu.style.top=e.pageY+"px";//菜单在下方
+    // 		}else{
+    // 			mymenu.style.top=(e.pageY-menuheight)+"px";
+    // 		}
+    // 		if(clientwidth-e.pageX>=menuwidth){ //右边有足够空间
+    // 			mymenu.style.left=e.pageX+"px";//菜单有右边
+    // 		}else{
+    // 			mymenu.style.left=(e.pageX-menuwidth)+"px";
+    // 		}
+    // 			console.log(clientheight-e.pageY,clientwidth-e.pageX);
+    // 	})
+    // 	document.body.addEventListener("click",function(e){ //点击其他地方菜单消失，可恢复默认的菜单事件
+    // 		mymenu.style.cssText='display: none;';
+    // 	})
+    // }
+    //监听mousedown事件
+    for(var i=0;i<$(".menu").length;i++){
+        $(".menu")[i].addEventListener("mousedown",function(e){
+            if(window.event) e=window.event; //兼容性
+            if(e.button==2){//判断按下右键
+                document.oncontextmenu=function(e){
+                    e.preventDefault();//阻止原有的菜单
+                    // e.returnValue=false;
+                }
+                mymenu.style.cssText='display: block;'; //先显示后才能获取menu的高宽
+                var menuwidth=mymenu.offsetWidth;//获取自定义菜单的高宽
+                var menuheight=mymenu.offsetHeight;
+                console.log(menuheight,menuwidth);
+                var clientwidth=document.documentElement.clientWidth;//获取当前可视窗口的高宽
+                var clientheight=document.documentElement.clientHeight;
+                if(clientheight-e.pageY>=menuheight){ //底下有足够空间时
+                    mymenu.style.top=e.pageY+"px";//菜单在下方
+                }else{
+                    mymenu.style.top=(e.pageY-menuheight)+"px";
+                }
+                if(clientwidth-e.pageX>=menuwidth){ //右边有足够空间
+                    mymenu.style.left=e.pageX+"px";//菜单有右边
+                }else{
+                    mymenu.style.left=(e.pageX-menuwidth)+"px";
+                }
+                console.log(clientheight-e.pageY,clientwidth-e.pageX);
+            }
+        })
+        document.body.addEventListener("click",function(e){ //点击其他地方菜单消失，可恢复默认的菜单事件
+            mymenu.style.cssText='display: none;';
+            document.oncontextmenu=function(e){}
+        })
+    }
+
+</script>
+</body>
+</html>

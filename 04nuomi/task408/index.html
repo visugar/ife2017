@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自定义右键菜单</title>
+    <style>
+        .btnBox {
+            width: 400px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            border: 1px solid #c0c0c0;
+        }
+
+        .menu-wrap {
+            display: none;
+
+            border: 1px solid #ccc;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            background-color: #fff;
+            box-shadow: 2px 2px 3px #909091;
+        }
+
+        .menu-wrap ul {
+            padding: 0 0;
+            list-style-type: none;
+            margin: 0;
+        }
+
+        .menu-wrap li {
+            border-bottom: 1px solid #ccc;
+            padding: 4px 0;
+        }
+
+        .menu-wrap li:last-child {
+            border-bottom: none;
+        }
+
+        .menu-wrap li a {
+            text-decoration: none;
+            color: #333;
+            padding: 0 30px;
+        }
+
+        .menu-wrap li:hover {
+            background-color: #555;
+        }
+
+        .menu-wrap li:hover a {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h4>使用oncontextmenu实现自定义右键菜单</h4>
+    <div class="btnBox">点我呦</div>
+    <br>
+    <div class="menu-wrap">
+        <ul class="">
+            <li><a href="#">菜单一aaaaaaa</a></li>
+            <li><a href="#">菜单二bbbbbbbbb</a></li>
+            <li><a href="#">菜单三ccccc</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    var $ = function (el) {
+        return document.querySelector(el);
+    };
+
+
+    $('.btnBox').oncontextmenu = function (e) {
+        rtHandle(e);
+        return false;
+    };
+
+    function rtHandle(e) {
+        var menuWrap = $('.menu-wrap');
+
+        e.preventDefault();//阻止原有的菜单
+        e.returnValue = false;//在IE中阻止原有的菜单
+
+
+        //获取右键菜单的宽高
+        menuWrap.style.display = 'block';
+        var w = menuWrap.offsetWidth;
+        var h = menuWrap.offsetHeight;
+        console.log('菜单的宽高：' + w, h);
+
+        //获取鼠标相对于左上角的坐标
+        var x = e.clientX;
+        var y = e.clientY;
+        console.log('鼠标坐标：' + x, y);
+
+        //获取浏览器的宽高
+        var winW = window.innerWidth;
+        var winH = window.innerHeight;
+        console.log('浏览器的宽高：' + winW, winH);
+
+        var mW = winW - x, mH = winH - y;
+        if (mW >= w && mH >= h) {
+            menuWrap.style.top = y + 'px';
+            menuWrap.style.left = x + 'px';
+        } else if (mW < w && mH >= h) {
+            menuWrap.style.top = y + 'px';
+            menuWrap.style.left = (x - w) + 'px';
+        } else if (mW < w && mH >= h) {
+            menuWrap.style.top = (y - h) + 'px';
+            menuWrap.style.left = x + 'px';
+        } else {
+            menuWrap.style.top = (y - h) + 'px';
+            menuWrap.style.left = (x - w) + 'px';
+        }
+
+        //显示菜单
+        //menuWrap.style.display = 'block';
+    }
+
+    //该框以外点击右键关闭自定义右键菜单，显示浏览器自带菜单
+    window.oncontextmenu = function (e) {
+        e = e || event;
+        var target = e.target || e.srcElement;
+        if (target.className != 'btnBox') {
+            $('.menu-wrap').style.display = 'none';
+        }
+    };
+
+    //左键点击任意位置关闭该菜单
+    window.onclick = function (e) {
+        if (window.event) e = window.event; //兼容性
+        if (e.button == 0) {
+            $('.menu-wrap').style.display = 'none';
+        }
+    }
+
+
+</script>
+</body>
+</html>
