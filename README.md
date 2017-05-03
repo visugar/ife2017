@@ -293,3 +293,12 @@
         - [oncontextmnue](http://www.runoob.com/jsref/event-oncontextmenu.html)：了解JavaScript中oncontextmenu的基本知识
         - [event那些事](http://xchb.work/2016/07/25/event%E9%82%A3%E4%BA%9B%E4%BA%8B/)： 收集整理的事件相关资料
        
+- **task409 - 使用CSS实现折叠面板**
+    > *任务说明*：深入理解html中radio的特性，深入理解CSS选择器以及伪元素的使用
+          
+    + [源码地址](https://github.com/visugar/ife2017/blob/master/04nuomi/task409/index.html)
+    + [预览地址](https://visugar.github.io/ife2017/04nuomi/task409/index.html)
+    + 小结：使用input的radio单选框特性结合css中的伪元素，再加上label的合作，实现面板折叠的效果，纯css及html完成，且只能显示一个面板。
+    + 参考资料：
+        - [MDN label](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)：了解html中label的基本知识
+        - [MDN Adjacent sibling selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors)： 了解CSS中的兄弟相邻选择器

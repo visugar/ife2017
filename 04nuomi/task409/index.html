@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用CSS实现折叠面板</title>
+    <style>
+        body, div, span, ul, li, a, h2, h3, h4, input, select, table {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        body {
+            font: 14px/24px "微软雅黑";
+            color: #666;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /*********************以上是预设*****************************/
+
+        .container {
+            width: 400px;
+            height: 500px;
+            margin: 0 auto;
+        }
+
+        input[type = radio] {
+            display: none;
+        }
+
+        input + label {
+            display: inline-block;
+            width: 100%;
+            background-color: #c0c0c0;
+            line-height: 2;
+            padding-left: 1em;
+            box-sizing: border-box;
+        }
+
+        .chBox {
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            margin-bottom: 2px;
+        }
+
+        .content {
+
+            width: 100%;
+            overflow: hidden;
+            height: 0;
+            padding-left: 1em;
+            transition: height .5s;
+        }
+
+        input[type=radio]:checked + label + .content {
+            height: 100px;
+            /* height: auto;*/
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="chBox item1">
+        <input type="radio" name="box" id="box1">
+        <label for="box1">约法三章 #1</label>
+        <div class="content">
+            <p>
+                告诉家人，公司规定上班不许打私人电话，所以这期间家里来电一律不接；如果真有事情要找自己，可以在晚上八点左右打过来。
+            </p>
+        </div>
+    </div>
+
+    <div class="chBox item2">
+        <input type="radio" name="box" id="box2">
+        <label for="box2">约法三章 #2</label>
+        <div class="content">
+            <p>
+                诉家人，不要动不动就把自己的电话号码告诉其他人，如果遇到什么事情，就由父亲或母亲单独和自己联系。
+            </p>
+        </div>
+    </div>
+
+    <div class="chBox item3">
+        <input type="radio" name="box" id="box3">
+        <label for="box3">约法三章 #3</label>
+        <div class="content">
+            <p>
+                告诉家人，你不是救世主也不是活菩萨，在力所能及的范围内，你能接受的帮衬底线是多少；超过这个底线的，
+                除非天灾人祸等不可抗力，其他一律由当事人自行解决。
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
