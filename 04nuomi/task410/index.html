@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则比表达式之入门</title>
+</head>
+<body>
+<div>
+    <h4>测试是否为正确手机号：</h4>
+    <select id="tel">
+        <option value="1">18812011232</option>
+        <option value="1">18812011232123</option>
+        <option value="2">18812312</option>
+        <option value="3">12345678909</option>
+    </select>
+    <button type="button" id="btn1">Test1</button>
+    <span id="result1"></span>
+</div>
+<div>
+    <h3>判断输入的字符串是否有相邻重复单词:</h3>
+    <input type="text" list="companys" id="ipt" value="">
+    <datalist id="companys">
+        <option value="foo foo bar">1</option>
+        <option value="foo bar foo">2</option>
+        <option value="foo  barbar bar">3</option>
+        <option value="foo  bar bar">4</option>
+        <option value="foo  bar barbar bar">5</option>
+    </datalist>
+    <button type="button" id="btn2">Test2</button>
+    <span id="result2"></span>
+</div>
+<script>
+    //1、移动号段有134,135,136,137,138,139,147,150,151,152,157,158,159,178,182,183,184,187,188。
+    //2、联通号段有130，131，132，155，156，185，186，145，176。
+    //3、电信号段有133，153，177，180，181，189。
+
+    var tel = document.getElementById('tel');
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+    var result1 = document.getElementById('result1');
+    var result2 = document.getElementById('result2');
+    var ipt = document.getElementById('ipt');
+    var selcVal = tel.options[0].text;
+    var iptVal;
+
+    /*用正则表达式测试是否为正确手机号*/
+    tel.onchange = function () {
+        var index = tel.selectedIndex;
+        selcVal = tel.options[index].text;
+    };
+
+    btn1.onclick = function () {
+        var reg = /1([38]\d|4[57]|5[0-35-9]|7[678])\d{8}$/;  //根据上面的实际手机号开头来判定
+        var tf = reg.test(selcVal);
+        result1.innerHTML = '验证结果：' + tf;
+    };
+
+    /*判断输入的字符串是否有相邻重复的单词*/
+    btn2.onclick = function () {
+        iptVal = ipt.value;
+        var reg = /(\b[A-z]+\b)\W+\b\1{1}\b/g;
+        var tf = reg.test(iptVal);
+        result2.innerText = '是否有相邻重复：' + tf;
+    };
+
+</script>
+</body>
+</html>

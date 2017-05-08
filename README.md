@@ -302,3 +302,14 @@
     + 参考资料：
         - [MDN label](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)：了解html中label的基本知识
         - [MDN Adjacent sibling selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors)： 了解CSS中的兄弟相邻选择器
+    
+- **task410 - 正则表达式之入门**
+    > *任务说明*：掌握JavaScript正则表达式编写规则，了解JavaScript中的正则表达式的特殊字符，了解JavaScript提供的正则表达式相关方法，能用正则表达式做一些简单文本或者数字校验
+          
+    + [源码地址](https://github.com/visugar/ife2017/blob/master/04nuomi/task410/index.html)
+    + [预览地址](https://visugar.github.io/ife2017/04nuomi/task410/index.html)
+    + 小结：使用正则表达式测试是否为正确的手机号，其中用到了select的onchange事件，regExp是根据实际生活中手机号开头来写的。然后是判断一个输入的字符串是否有相邻
+    的重复单词，要考虑到每个单词的边界，然后input表单用到了list及datalist特性，即同时可输入也可以下拉选择，在给定的词中还有自动补全的功能。
+    + 参考资料：
+        - [MDN Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)：了解JavaScript中正则表达式的基本知识
+        - [正则表达式30分钟入门教程](https://deerchao.net/tutorials/regex/regex.htm)： 30分钟入门
