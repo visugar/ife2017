@@ -25,6 +25,7 @@
         <option value="foo  barbar bar">3</option>
         <option value="foo  bar bar">4</option>
         <option value="foo  bar barbar bar">5</option>
+        <option value="foo-a foo-a bar">6</option>
     </datalist>
     <button type="button" id="btn2">Test2</button>
     <span id="result2"></span>
@@ -58,7 +59,7 @@
     /*判断输入的字符串是否有相邻重复的单词*/
     btn2.onclick = function () {
         iptVal = ipt.value;
-        var reg = /(\b[A-z]+\b)\W+\b\1{1}\b/g;
+        var reg = /(\b(-?[A-z])+\b)\W+\b\1{1}\b/g;
         var tf = reg.test(iptVal);
         result2.innerText = '是否有相邻重复：' + tf;
     };
