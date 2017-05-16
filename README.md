@@ -313,3 +313,13 @@
     + 参考资料：
         - [MDN Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)：了解JavaScript中正则表达式的基本知识
         - [正则表达式30分钟入门教程](https://deerchao.net/tutorials/regex/regex.htm)： 30分钟入门
+        
+- **task413 - CSS3饼状loading效果**
+    > *任务说明*：学习和掌握水平垂直居中布局，学习和掌握利用HTML和CSS构造简单规则图形，学习和掌握和使用CSS3动画新特性
+          
+    + [源码地址](https://github.com/visugar/ife2017/blob/master/04nuomi/task413/index.html)
+    + [预览地址](https://visugar.github.io/ife2017/04nuomi/task413/index.html)
+    + 小结：用到了border-radius来实现圆和半圆，四分之三圆环则是由border来实现，使用到了水平垂直都居中的知识点，用到了z-index来控制半圆的显示与隐藏来配合动画的完成。且只使用css不使用js。
+    + 参考资料：
+        - [MDN CSS3](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS3)
+        - [CSS3实现鸡蛋饼饼状图loading等待转转转](http://www.zhangxinxu.com/wordpress/2014/04/css3-pie-loading-waiting-animation/)     
