@@ -33,7 +33,7 @@
 > 根据视觉稿实现了基本的效果图，但是有的地方卡住了，还没解决，继续学习下再思考某些效果的实现
 
 ### 7. task07
-- [常见官网类型排版](https://visugar.github.io/visugar/ife2017/01xiaowei/task07/index.html)
+- [常见官网类型排版](https://visugar.github.io/ife2017/01xiaowei/task07/index.html)
 
 > 根据视觉稿实现了基本的效果图，不过有几个小地方写的比较粗糙，整体代码写的也有点乱，有待加强
 
