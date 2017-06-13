@@ -2,9 +2,126 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>css实现字体流光背景模糊效果</title>
+    <style>
+        #box {
+            width: 447px;
+            height: 295px;
+            text-align: center;
+            margin: 0 auto;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        /*hover到box上时图片模糊处理*/
+        #box:hover img {
+            -webkit-filter: blur(2px);
+        }
+
+        #content {
+            position: absolute;
+            top: 40px;
+            left: 45px;
+            width: 357px;
+            height: 215px;
+        }
+
+        /*第一行变色文字*/
+        #content h3 {
+            margin-top: 75px;
+            /*color: transparent;*/
+            -webkit-text-fill-color: transparent;
+            background-image: -webkit-linear-gradient(left, red, yellow 25%, red 50%, yellow 75%, red 100%);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            animation: change 5s infinite linear;
+            opacity: 0;
+            transition: all 0.5s
+        }
+
+        @keyframes change {
+            0% {
+                background-position: 0;
+            }
+            100% {
+                background-position: -100%;
+            }
+        }
+
+        /*第二行变色处理*/
+        #click {
+            font-weight: bold;
+            opacity: 0;
+            transition: all 0.5s;
+            animation: click 1.5s infinite linear;
+        }
+
+        @keyframes click {
+            0% {
+                color: #3e8f3e
+            }
+            50% {
+                color: #32DDFF;
+            }
+            100% {
+                color: #3e8f3e
+            }
+        }
+
+        #box:hover #content h3, #box:hover #click {
+            opacity: 1;
+
+        }
+
+        /*追加元素实现边框边长效果（上下两边）*/
+        #content:before {
+            content: " ";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 0;
+            height: 100%;
+            border: 3px solid #fff;
+            border-left: none;
+            border-right: none;
+            transition: all 0.8s;
+            box-sizing: border-box;
+        }
+
+        #box:hover #content:before {
+            width: 100%;
+            left: 0;
+        }
+
+        /*左右两边*/
+        #content:after {
+            content: " ";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 0;
+            border: 3px solid #fff;
+            border-top: none;
+            border-bottom: none;
+            transition: all 0.8s;
+            box-sizing: border-box;
+        }
+
+        #box:hover #content:after {
+            height: 100%;
+            top: 0;
+        }
+
+    </style>
 </head>
 <body>
-
+<div id="box">
+    <img id="imgs" src="./img/bg.png">
+    <div id="content">
+        <h3>欢迎观看本次影片的播放，谢谢</h3>
+        <p id="click">点击关注</p>
+    </div>
+</div>
 </body>
 </html>

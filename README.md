@@ -269,6 +269,12 @@
 
 ---
 ### 4. 糯米学院：
+- **task401 - 有趣的鼠标悬浮模糊效果**
+    > *任务说明*：实现文字的流光渐变动画，背景图需要进行模糊处理，实现按钮边框的从中间到两边扩展开的效果
+
+    + [源码地址](https://github.com/visugar/ife2017/blob/master/04nuomi/task401/index.html)
+    + [预览地址](https://visugar.github.io/ife2017/04nuomi/task401/index.html)
+    + 小结：使用background-image：-webkit-linear-gradient()实现背景渐变的效果，利用-webkit-background-clip: text;把背景颜色渐变的效果应用到文本的文字上，通过中间内容的追加元素实现边框的伸展效果。
 
 - **task406 - 自定义checkbox， radio样式**
     > *任务说明*：深入了解html、label标签，了解CSS边框、背景、伪元素、伪类（注意和伪元素区分）等属性的设置，了解CSS中常见的雪碧图，并能自己制作使用雪碧图
@@ -314,11 +320,11 @@
         - [MDN Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)：了解JavaScript中正则表达式的基本知识
         - [正则表达式30分钟入门教程](https://deerchao.net/tutorials/regex/regex.htm)： 30分钟入门
         
-- **task413 - CSS3饼状loading效果**
+- **task412 - CSS3饼状loading效果**
     > *任务说明*：学习和掌握水平垂直居中布局，学习和掌握利用HTML和CSS构造简单规则图形，学习和掌握和使用CSS3动画新特性
           
-    + [源码地址](https://github.com/visugar/ife2017/blob/master/04nuomi/task413/index.html)
-    + [预览地址](https://visugar.github.io/ife2017/04nuomi/task413/index.html)
+    + [源码地址](https://github.com/visugar/ife2017/blob/master/04nuomi/task412/index.html)
+    + [预览地址](https://visugar.github.io/ife2017/04nuomi/task412/index.html)
     + 小结：用到了border-radius来实现圆和半圆，四分之三圆环则是由border来实现，使用到了水平垂直都居中的知识点，用到了z-index来控制半圆的显示与隐藏来配合动画的完成。且只使用css不使用js。
     + 参考资料：
         - [MDN CSS3](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS3)
