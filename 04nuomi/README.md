@@ -17,5 +17,8 @@
 #### 10. [task410](https://visugar.github.io/ife2017/04nuomi/task410/index.html)
 > 利用正则表达式测试是否为正确的手机号，判断输入的字符串是否有相邻重复的单词
 
-#### 12. [task410](https://visugar.github.io/ife2017/04nuomi/task412/index.html)
+#### 12. [task412](https://visugar.github.io/ife2017/04nuomi/task412/index.html)
 > 通过纯css来实现饼状Loading的效果
+
+#### 13. [task413](https://visugar.github.io/ife2017/04nuomi/task413/index.html)
+> 通过纯css3来实现3D 轮播图的效果

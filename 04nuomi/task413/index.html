@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3实现3D轮播图</title>
+    <style>
+        #wrap {
+            position: relative;
+            width: 345px;
+            height: 220px;
+            margin: 120px auto;
+            perspective: 1000px;
+        }
+
+        #box {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+        }
+
+        .item {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: visible;
+        }
+
+        .item img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .item1 {
+            transform: rotateY(0) translateZ(340px);
+        }
+
+        .item2 {
+            transform: rotateY(60deg) translateZ(340px);
+        }
+
+        .item3 {
+            transform: rotateY(120deg) translateZ(340px);
+        }
+
+        .item4 {
+            transform: rotateY(180deg) translateZ(340px);
+        }
+
+        .item5 {
+            transform: rotateY(240deg) translateZ(340px);
+        }
+
+        .item6 {
+            transform: rotateY(300deg) translateZ(340px);
+        }
+
+        #wrap .animation-box {
+            animation: rot 10s infinite;
+            animation-play-state: paused;
+        }
+
+        /*#wrap .transform-box {
+            transition: transform 1s;
+        }*/
+
+        @-webkit-keyframes rot {
+            0% {
+                transform: rotateY(0);
+            }
+            16.6% {
+                transform: rotateY(-60deg);
+            }
+            33.3% {
+                transform: rotateY(-120deg);
+            }
+            49.9% {
+                transform: rotateY(-180deg);
+            }
+            66.6% {
+                transform: rotateY(-240deg);
+            }
+            83.3% {
+                transform: rotateY(-300deg);
+            }
+            100% {
+                transform: rotateY(-360deg);
+            }
+        }
+
+        #btn-wrap {
+            width: 400px;
+            height: 40px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .btn {
+            width: 80px;
+            height: 40px;
+            border-radius: 6px;
+            background-color: #2aabd2;
+            color: #fff;
+            outline: none;
+            border: 2px solid #1b6d85;
+        }
+
+        .btn:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="box" class="animation-box">
+        <div class="item item1"><a href="http://visugar.com" target="_blank"><img data-index="1" src="./imgs/01.jpg"></a></div>
+        <div class="item item2"><img data-index="2" src="./imgs/02.jpg"></div>
+        <div class="item item3"><img data-index="3" src="./imgs/03.jpg"></div>
+        <div class="item item4"><img data-index="4" src="./imgs/04.jpg"></div>
+        <div class="item item5"><img data-index="5" src="./imgs/05.jpg"></div>
+        <div class="item item6"><img data-index="6" src="./imgs/06.jpg"></div>
+    </div>
+</div>
+
+<div id="btn-wrap">
+    <button type="button" class="btn start">开始</button>
+    <button type="button" class="btn stop">停止</button>
+</div>
+
+<script>
+    var box = document.getElementById('box');
+    var start = document.getElementsByClassName('start')[0];
+    var stop = document.getElementsByClassName('stop')[0];
+
+    var current;
+
+    /*开始*/
+    start.onclick = function () {
+        box.style.animationPlayState = 'running';
+    };
+
+    /*停止*/
+    stop.onclick = function () {
+        box.style.animationPlayState = 'paused';
+
+        /*console.log(window.getComputedStyle(box).transform);  //得到一个比较复杂的矩阵*/
+    };
+
+    /*点击某一张则显示在最前面*/
+    box.onmouseover = function (e) {
+        current = box.style.animationPlayState;
+        var e = e || window.event;
+        var target = e.target || e.srcElement;
+        if (target && target.tagName == 'IMG') {
+            box.style.animationPlayState = 'paused';
+        }
+    };
+
+    box.onmouseout = function (e) {
+        var e = e || window.event;
+        var target = e.target || e.srcElement;
+        if (target && target.tagName == 'IMG') {
+            if (current == 'running') {
+                box.style.animationPlayState = 'running';
+            }
+
+        }
+    }
+</script>
+</body>
+</html>

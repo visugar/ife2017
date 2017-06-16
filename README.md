@@ -328,4 +328,11 @@
     + 小结：用到了border-radius来实现圆和半圆，四分之三圆环则是由border来实现，使用到了水平垂直都居中的知识点，用到了z-index来控制半圆的显示与隐藏来配合动画的完成。且只使用css不使用js。
     + 参考资料：
         - [MDN CSS3](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS3)
-        - [CSS3实现鸡蛋饼饼状图loading等待转转转](http://www.zhangxinxu.com/wordpress/2014/04/css3-pie-loading-waiting-animation/)     
+        - [CSS3实现鸡蛋饼饼状图loading等待转转转](http://www.zhangxinxu.com/wordpress/2014/04/css3-pie-loading-waiting-animation/)
+
+- **task413 - CSS3实现3D 轮播图**
+    > *任务说明*：了解CSS的定义、概念、发展简史，掌握CSS选择器的含义和用法，实践并掌握CSS的颜色、字体、背景、边框、盒模型、简单布局等样式的定义方式，理解 css 3d 和 景深的原理
+
+    + [源码地址](https://github.com/visugar/ife2017/blob/master/04nuomi/task413/index.html)
+    + [预览地址](https://visugar.github.io/ife2017/04nuomi/task413/index.html)
+    + 小结：通过CSS3的animation实现轮播动画，只实现了初步功能，后续要接着完善。
