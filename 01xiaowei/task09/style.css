@@ -1,0 +1,680 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix:after {
+    content: '.';
+    height: 0;
+    display: block;
+    overflow: hidden;
+    visibility: none;
+    clear: both;
+}
+
+li {
+    list-style: none;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    background: #2088BE;
+}
+
+header .m-hd {
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.m-hd .u-icon {
+    flex: 7;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    background: url('http://opeywooaz.bkt.clouddn.com/headphoto.png') no-repeat;
+    background-size: 40px 40px;
+}
+
+.m-hd input {
+    flex: 4;
+    width: 200px;
+    height: 25px;
+    background: #fff url(./img/search.png) no-repeat 5px center;
+    padding-left: 24px;
+    border-radius: 15px;
+    margin: 15px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.m-hd .u-login {
+    display: inline;
+    flex: 1;
+    background: url(https://raw.githubusercontent.com/wangxiaoniu/ife_baidu_html8-12/master/task9/images/login_icon.png) no-repeat;
+    background-size: 18px 18px;
+    padding-left: 24px;
+    margin: 20px 0 0 20px;
+    font-size: 16px;
+    line-height: 16px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.g-ct {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.g-lt {
+    float: left;
+    width: 200px;
+    height: 1000px;
+    overflow: auto;
+    background-color: #2A2D3C;
+}
+
+.g-rt {
+    float: right;
+    width: 800px;
+    height: 1000px;
+    background-color: #EEEEEC;
+}
+
+
+/*左侧边栏样式开始*/
+
+.m-nav {
+    color: #5E6C7E;
+    font-size: 14px;
+}
+
+.f-photo {
+    text-align: center;
+    color: #fff;
+}
+
+.f-photo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 20px 10px 20px 0;
+    vertical-align: middle;
+}
+
+.g-info {
+    text-align: center;
+}
+
+.f-collect {
+    float: left;
+    width: 50%;
+    border-right: 1px solid #363948;
+    box-sizing: border-box;
+}
+
+.f-fans {
+    float: right;
+    width: 50%;
+}
+
+.nav {
+    margin-top: 20px;
+}
+
+.nav>li {
+    margin-bottom: 5px;
+    padding: 10px 0;
+}
+
+.nav .active {
+    background-color: #373D4D;
+}
+
+.nav .report {
+    background: url('./img/report-icon.png') no-repeat left center;
+    padding-left: 15px;
+    margin-left: 25px;
+}
+
+.nav .folder {
+    background: url('./img/fold-icon.png') no-repeat left center, url('./img/folder-icon.png') no-repeat 20px center;
+    margin: 10px 0 0 40px;
+    padding-left: 35px;
+}
+
+.nav .fl-active {
+    background: url('./img/unfold-icon.png') no-repeat left center, url('./img/folder-active-icon.png') no-repeat 20px center;
+}
+
+.nav .file {
+    background: url('./img/file-icon.png') no-repeat left center;
+    margin: 10px 0 0 55px;
+    padding-left: 15px;
+}
+
+.nav .fi-active {
+    background: url('./img/file-active-icon.png') no-repeat left center;
+}
+
+.nav .collect {
+    background: url('./img/star-icon.png') no-repeat left center;
+    padding-left: 15px;
+    margin-left: 25px;
+}
+
+.nav .share {
+    background: url('./img/share-icon.png') no-repeat left center;
+    padding-left: 15px;
+    margin-left: 25px;
+}
+
+.nav .pics {
+    background: url('./img/star-icon.png') no-repeat left center;
+    padding-left: 15px;
+    margin-left: 25px;
+}
+
+.nav .grow {
+    background: url('./img/star-icon.png') no-repeat left center;
+    padding-left: 15px;
+    margin-left: 25px;
+}
+
+.nav .info {
+    background: url('./img/info-icon.png') no-repeat left center;
+    padding-left: 15px;
+    margin-left: 25px;
+}
+
+
+/*左侧边栏样式结束*/
+
+
+/*主要内容样式*/
+
+.u-crumbs {
+    width: 100%;
+    height: 30px;
+    background: #fff;
+    padding-left: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    color: #5E6C7E;
+}
+
+.u-crumbs span {
+    color: #398AC1;
+}
+
+.m-ct {
+    padding: 10px 40px 0 40px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #5E6C7E;
+}
+
+.f-search {
+    position: relative;
+    width: 720px;
+    height: 80px;
+    padding: 10px 20px;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.f-search .sec select {
+    width: 70px;
+    height: 25px;
+    margin-left: 10px;
+}
+
+.f-search .peo {
+    position: absolute;
+    left: 170px;
+    top: 10px;
+}
+
+.f-search .peo select {
+    width: 100px;
+    height: 25px;
+    margin: 0 0 5px 5px;
+}
+
+.f-search .peo img {
+    position: absolute;
+    left: 136px;
+    top: 9px;
+}
+
+.f-search .result {
+    position: absolute;
+    left: 350px;
+    top: 9px;
+}
+
+.f-search .result select {
+    margin-left: 5px;
+    height: 25px;
+}
+
+.f-search .result .date {
+    width: 100px;
+    margin: 0 0 5px 5px;
+}
+
+.f-search .result .person,
+.f-search .result .project {
+    width: 75px;
+}
+
+.sec-btn {
+    position: absolute;
+    right: 50px;
+    top: 25px;
+    width: 60px;
+    height: 30px;
+    color: #fff;
+    background: #2088BE;
+    border: none;
+}
+
+.f-price {
+    width: 100%;
+    height: 60px;
+    margin-top: 15px;
+}
+
+.f-price .btn {
+    float: left;
+    width: 25px;
+    height: 60px;
+    border: none;
+    outline: none;
+}
+
+.f-price .prev {
+    background: #fff url('./img/arrow-left.png') no-repeat center center;
+}
+
+.f-price .next {
+    background: #fff url('./img/arrow-right.png') no-repeat center center;
+}
+
+.f-price ul {
+    float: left;
+    margin: 0 4px;
+}
+
+.f-price .price {
+    display: inline-block;
+    width: 90px;
+    height: 60px;
+    padding-top: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    background: #fff;
+}
+
+.f-price .price span {
+    color: red;
+}
+
+.f-price .price i {
+    font-style: normal;
+    font-size: 0.8em;
+}
+
+.f-price .history {
+    display: inline-block;
+    width: 96px;
+    height: 60px;
+    text-align: center;
+    margin-left: 5px;
+    padding-left: 25px;
+    box-sizing: border-box;
+    line-height: 58px;
+    background: #fff url('./img/history-icon.png') no-repeat left center;
+}
+
+.f-stat {
+    margin-top: 10px;
+}
+
+.f-stat p {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.f-stat .stat {
+    position: relative;
+    display: inline-block;
+    width: 160px;
+    height: 60px;
+    margin-left: 22px;
+    background: #fff;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.f-stat .stat:first-child {
+    margin-left: 0;
+}
+
+.f-stat .stat .statimg {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 50px;
+    height: 40px;
+}
+
+.f-stat .stat1 {
+    border-left: 3px solid #43B29F;
+}
+
+.f-stat .stat2 {
+    border-left: 3px solid #398AC1;
+}
+
+.f-stat .stat3 {
+    border-left: 3px solid #CF4B36;
+}
+
+.f-stat .stat4 {
+    border-left: 3px solid #E1CD46;
+}
+
+.f-stat .stat1 .statimg {
+    background: #43B29F;
+}
+
+.f-stat .stat2 .statimg {
+    background: #398AC1;
+}
+
+.f-stat .stat3 .statimg {
+    background: #CF4B36;
+}
+
+.f-stat .stat4 .statimg {
+    background: #E1CD46;
+}
+
+.f-stat .stat .data {
+    margin: 10px 0 0 10px;
+}
+
+.f-project {
+    float: left;
+    width: 440px;
+    margin-right: 11px;
+}
+
+.f-detail {
+    float: right;
+    width: 265px;
+}
+
+.f-project,
+.f-detail {
+    margin-top: 15px;
+    height: 300px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.m-pro .title,
+.m-data .title {
+    height: 30px;
+    background: #F4F5F7;
+    padding-left: 15px;
+    line-height: 30px;
+}
+
+.f-project .tab-ct {
+    padding: 10px 20px;
+}
+
+.f-project .title-wrap li {
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    border-radius: 4px 4px 0 0/4px 4px 0 0;
+    background: #EEEDF2;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+}
+
+.f-project .title-wrap .active {
+    background: #fff;
+    border-width: 1px 1px 0;
+    border-style: solid;
+    border-color: #ccc;
+    position: relative;
+    top: 1px;
+}
+
+.f-project .table {
+    border: 1px solid #ccc;
+    padding: 25px 20px;
+}
+
+.f-project table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    width: 360px;
+    height: 160px;
+    text-align: center;
+}
+
+.f-project table td:hover {
+    background: #F5F5F5;
+}
+
+.f-detail .detail {
+    padding: 10px 0 20px 30px;
+    box-sizing: border-box;
+}
+
+.f-detail .detail span {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.f-detail .info {
+    float: left;
+    height: 40px;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #ccc;
+    margin: 5px 0;
+    padding-left: 10px;
+}
+
+.f-detail .price {
+    width: 60px;
+    border-right: 1px solid #ccc;
+}
+
+.f-detail .person {
+    width: 120px;
+}
+
+.f-detail .description {
+    width: 200px;
+    ;
+    height: 110px;
+    border-bottom: 1px solid #ccc;
+}
+
+.f-detail .xy {
+    position: relative;
+    top: 2px;
+    margin-top: 20px;
+}
+
+.f-detail .sec {
+    width: 60px;
+    height: 30px;
+    color: #fff;
+    background: #2088BE;
+    border: none;
+    outline: none;
+    margin-left: 35px;
+}
+
+
+/*日期选择*/
+
+.f-date {
+    float: left;
+    width: 305px;
+}
+
+.f-rank {
+    float: right;
+    width: 400px;
+}
+
+.f-date,
+.f-rank {
+    margin-top: 15px;
+    height: 350px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.f-date .date-detail {
+    padding: 10px;
+}
+
+.f-date .date-sec select {
+    height: 20px;
+    width: 70px;
+    margin-top: 5px;
+}
+
+.f-date .date-sec .btn {
+    width: 60px;
+    height: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    background: #fff;
+}
+
+.f-date .weekday {
+    border-top: 1px solid #58A4D8;
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 5px 0;
+}
+
+.f-date .weekday li {
+    float: left;
+    width: 40px;
+    text-align: center;
+}
+
+.f-date .date {
+    margin-top: 5px;
+}
+
+.f-date .date li {
+    float: left;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.f-date .date li:hover {
+    border: 1px solid #E1CD46;
+}
+
+.f-date .date p {
+    font-size: 12px;
+}
+
+.f-date .date li.empty {
+    border: none;
+}
+
+.f-date .date .festival {
+    color: red;
+}
+
+.f-rank .rank {
+    padding: 20px;
+}
+
+.f-rank .rank table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    width: 360px;
+    height: 280px;
+    text-align: center;
+}
+
+.f-rank tr td:nth-child(-n+2) {
+    width: 50px;
+}
+
+.f-rank tr:nth-child(1) td:nth-child(3) {
+    text-align: center;
+}
+
+.f-rank tr td:nth-child(3) {
+    text-align: left;
+    padding-left: 20px;
+    position: relative;
+}
+
+.f-rank .rank .hot {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: inline-block;
+    width: 120px;
+    height: 3px;
+    background-color:#eee;
+}
+
+.f-rank .hot i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    height: 100%;
+}
+
+.f-rank .rank tr:nth-child(2) i {
+    width: 80%;
+    background: red;
+}
+
+.f-rank .rank tr:nth-child(3) i {
+    width: 75%;
+    background: #DA6469;
+}
+
+.f-rank .rank tr:nth-child(4) i {
+    width: 70%;
+    background: #D8A2A4;
+}
+
+.f-rank .rank tr:nth-child(n+5) i {
+    width: 60%;
+    background: #57BDC9;
+}
