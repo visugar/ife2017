@@ -45,7 +45,7 @@
 ### 9. task09
 - [完整的复杂布局](https://visugar.github.io/ife2017/01xiaowei/task09/index.html)
 
-> 待完善
+> 这个任务实现的主要实现一个复杂的后台管理页面，涉及到较多常用的东西。
 
 ### 10. task010
 - [Flex弹性布局](https://visugar.github.io/ife2017/01xiaowei/task010/index.html)
